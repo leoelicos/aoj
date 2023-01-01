@@ -1,4 +1,4 @@
-/* import { StrictMode } from 'react'
+import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ErrorPage from './error-page'
@@ -25,9 +25,8 @@ createRoot(rootEl).render(
     <RouterProvider router={router} />
   </StrictMode>
 )
- */
 
-import React from 'react'
+/* import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
@@ -41,4 +40,4 @@ ReactDOM.render(
   document.getElementById('root')
 )
 
-reportWebVitals(sendToVercelAnalytics)
+reportWebVitals(sendToVercelAnalytics) */
