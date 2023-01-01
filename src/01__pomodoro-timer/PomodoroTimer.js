@@ -46,7 +46,7 @@ const PomodoroTimer = () => {
         else {
           clearInterval(timerRef.current)
           setStarted(false)
-          alert('text')
+          alert('Alarm finished')
           return prev
         }
       })
