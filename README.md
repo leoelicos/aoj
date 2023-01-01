@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Advent of Javascript
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React implementation of [Advent of Javascript](https://www.adventofjs.com/), a collection of 24 Javascript problems.
 
-## Available Scripts
+## Projects
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+|     |                           | Status |
+| --- | ------------------------- | ------ |
+| 1   | Pomodoro Timer            | ✔️     |
+| 2   | eCommerce Component       | ❌     |
+| 3   | Creating A Piano          | ❌     |
+| 4   | Computer Keyboard         | ❌     |
+| 5   | Episode Listing           | ❌     |
+| 6   | Range Slider              | ❌     |
+| 7   | Tip Calculator            | ❌     |
+| 8   | Weather App               | ❌     |
+| 9   | Image Carousel            | ❌     |
+| 10  | Verification Code         | ❌     |
+| 11  | Expanding Collapsing Faqs | ❌     |
+| 12  | Rock Paper Scissors       | ❌     |
+| 13  | Custom Modal              | ❌     |
+| 14  | Calendar Picker           | ❌     |
+| 15  | Youtube API               | ❌     |
+| 16  | Star Rating               | ❌     |
+| 17  | Sidebar Highlight         | ❌     |
+| 18  | Password Generator        | ❌     |
+| 19  | Signup Form               | ❌     |
+| 20  | Tab Component             | ❌     |
+| 21  | Simplified Budget         | ❌     |
+| 22  | Credit Card Form          | ❌     |
+| 23  | Toaster                   | ❌     |
+| 24  | Table Of Data             | ❌     |
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+You can learn about the projects at [Advent of Javascript](https://www.adventofjs.com/).
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The apps are deployed at [aoj.vercel.app](aoj.vercel.app)
