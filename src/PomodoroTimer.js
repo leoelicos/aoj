@@ -2,7 +2,7 @@ import './starter-files/styles.css'
 import { ReactComponent as Gear } from './starter-files/images/gear.svg'
 import { ReactComponent as Ring } from './ring.svg'
 import { ReactComponent as Check } from './starter-files/images/check.svg'
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState } from 'react'
 
 function ClockNumber({ value, cb = null, disabled = false }) {
   return (
