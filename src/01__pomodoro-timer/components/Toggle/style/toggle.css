@@ -1,0 +1,15 @@
+.toggle {
+  border: none;
+  background: none;
+  cursor: pointer;
+  opacity: 0.3;
+}
+
+.toggle:hover {
+  opacity: 1;
+}
+
+.alarm {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
