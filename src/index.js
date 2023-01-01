@@ -5,7 +5,7 @@ import ErrorPage from './error-page'
 
 import './normalize.css'
 import Toc from './Toc'
-import PomodoroTimer from './01__pomodoro-timer/PomodoroTimer'
+import PomodoroTimer from './PomodoroTimer'
 
 const router = createBrowserRouter([
   {
