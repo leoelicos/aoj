@@ -4,7 +4,7 @@ import styles from './styles.module.css'
 
 const formatPrice = (cents) => `$${Math.floor(cents / 100)}.${String(Math.floor(cents) % 100).padStart(2, '0')}`
 
-function MenuItem({ name, price, image, alt, count, setData, cart, setCart }) {
+function MenuItem({ name, price, image, alt, setData, cart, setCart }) {
   const handleClickAdd = () => {
     setCart((prev) => (prev.includes(name) ? prev : prev.concat(name)))
     setData((prev) => prev.map((item) => (item.name !== name ? item : { ...item, count: 1 })))
@@ -42,6 +42,7 @@ function MenuItem({ name, price, image, alt, count, setData, cart, setCart }) {
     </li>
   )
 }
+
 function Menu({ data, setData, cart, setCart }) {
   return (
     <div className={styles.panel}>
@@ -61,7 +62,7 @@ function Menu({ data, setData, cart, setCart }) {
   )
 }
 
-function CartItem({ name, price, image, alt, count, setData, cart, setCart }) {
+function CartItem({ name, price, image, alt, count, setData, setCart }) {
   const handleDecrease = () => {
     setData((prev) =>
       prev.map((item) =>
