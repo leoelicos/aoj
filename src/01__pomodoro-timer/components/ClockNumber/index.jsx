@@ -1,7 +1,7 @@
-import './style/clock.css'
+import styles from './style/clock.module.css'
 export default function ClockNumber({ minutes, seconds, setMinutes, setSeconds, disabled = false }) {
   return (
-    <div className='time'>
+    <div className={styles.time}>
       <div>
         <input
           type='text'

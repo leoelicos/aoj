@@ -1,4 +1,4 @@
-import './style/timer.css'
+import styles from './style/timer.module.css'
 
 import { useRef, useState } from 'react'
 import ClockNumber from './components/ClockNumber'
@@ -52,43 +52,44 @@ export default function PomodoroTimer() {
   const offset = (circleWidth * (current.minutes * 60 + current.seconds)) / (saved.minutes * 60 + saved.seconds) + 'px'
 
   return (
-    <div className='wrapper'>
-      <div className={started ? 'ring ' : 'ring ending'}>
+    <div className={styles.body}>
+      <div className={styles.wrapper}>
         <Ring
           strokeDasharray={`${circleWidth}px`}
           strokeDashoffset={offset}
+          started={started}
         />
-      </div>
 
-      <div className='timer'>
-        <div className='time'>
-          {edit ? (
-            <ClockNumber
-              {...saved}
-              setMinutes={setSavedMinutes}
-              setSeconds={setSavedSeconds}
-            />
-          ) : (
-            <ClockNumber
-              {...current}
-              setMinutes={setCurrentMinutes}
-              setSeconds={setCurrentSeconds}
-              disabled={true}
-            />
-          )}
+        <div className={styles.timer}>
+          <div className={styles.time}>
+            {edit ? (
+              <ClockNumber
+                {...saved}
+                setMinutes={setSavedMinutes}
+                setSeconds={setSavedSeconds}
+              />
+            ) : (
+              <ClockNumber
+                {...current}
+                setMinutes={setCurrentMinutes}
+                setSeconds={setCurrentSeconds}
+                disabled={true}
+              />
+            )}
+          </div>
+          <Control
+            cb={started ? handleClickStop : handleClickStart}
+            disabled={edit}
+            msg={edit ? '.' : started ? 'STOP' : `START`}
+          />
+          <Toggle
+            handleClickGear={handleClickGear}
+            disabled={started}
+            minutes={saved.minutes}
+            seconds={saved.seconds}
+            edit={edit}
+          />
         </div>
-        <Control
-          cb={started ? handleClickStop : handleClickStart}
-          disabled={edit}
-          msg={edit ? '.' : started ? 'STOP' : `START`}
-        />
-        <Toggle
-          handleClickGear={handleClickGear}
-          disabled={started}
-          minutes={saved.minutes}
-          seconds={saved.seconds}
-          edit={edit}
-        />
       </div>
     </div>
   )

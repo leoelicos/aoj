@@ -1,9 +1,9 @@
-import './style/control.css'
+import styles from './style/control.module.css'
 
 function Control({ cb, msg, disabled }) {
   return (
     <button
-      className='start'
+      className={styles.start}
       onClick={cb}
       disabled={disabled}>
       {msg}
