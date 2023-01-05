@@ -1,30 +1,30 @@
 import { useEffect, useState } from 'react'
-import styles from './styles.module.css'
+
+// data
 import keys from './data/keys'
-function Button({ name, code, isJiggle }) {
-  let style = styles.key
-  if (['Tab', 'CapsLock', 'Enter', 'ShiftLeft', 'ShiftRight'].includes(code)) style += ' ' + styles.utility
-  if (isJiggle) {
-    style += ' ' + styles.jiggle
-    console.log('isJiggle = ', code)
-  }
-  return <button className={style}>{name}</button>
-}
+import codes from './data/codes'
+
+// components
+import Button from './components/Button'
+
+// styles
+import styles from './style/styles.module.css'
+
+const Body = ({ children }) => <div className={styles.body}>{children}</div>
+const Keyboard = ({ children }) => <div className={styles.keyboard}>{children}</div>
+const Row = ({ children }) => <div className={styles.row}>{children}</div>
 
 export default function ComputerKeyboard() {
-  const codes = ['Backquote', 'Digit1', 'Digit2', 'Digit3', 'Digit4', 'Digit5', 'Digit6', 'Digit7', 'Digit8', 'Digit9', 'Digit0', 'Minus', 'Equal', 'Backspace', 'Tab', 'KeyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT', 'KeyY', 'KeyU', 'KeyI', 'KeyO', 'KeyP', 'BracketLeft', 'BracketRight', 'Backslash', 'CapsLock', 'KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyK', 'KeyL', 'Semicolon', 'Quote', 'Enter', 'ShiftLeft', 'KeyZ', 'KeyX', 'KeyC', 'KeyV', 'KeyB', 'KeyN', 'KeyM', 'Comma', 'Period', 'Slash', 'ShiftRight']
   const getRandomCode = () => codes[Math.floor(Math.random() * codes.length)]
 
   const [jiggle, setJiggle] = useState(getRandomCode())
   const [pressedKey, setPressedKey] = useState(null)
   const handleKeyDown = (e) => {
-    setPressedKey((prev) => e.code)
+    setPressedKey(e.code)
   }
 
   useEffect(() => {
-    if (pressedKey === jiggle) {
-      setJiggle((prev) => getRandomCode())
-    }
+    if (pressedKey === jiggle) setJiggle(getRandomCode())
   }, [pressedKey, jiggle, setJiggle])
 
   useEffect(() => {
@@ -35,13 +35,13 @@ export default function ComputerKeyboard() {
   }, [])
 
   return (
-    <div className={styles.body}>
-      <div className={styles.keyboard}>
+    <Body>
+      <Keyboard>
         <h1>Eyes on the Screen</h1>
         {keys.map((row, i) => (
-          <div
+          <Row
             key={i}
-            className={styles.row}>
+            row={row}>
             {row.map(({ code, key }) => (
               <Button
                 key={code}
@@ -50,9 +50,9 @@ export default function ComputerKeyboard() {
                 isJiggle={code === jiggle}
               />
             ))}
-          </div>
+          </Row>
         ))}
-      </div>
-    </div>
+      </Keyboard>
+    </Body>
   )
 }
