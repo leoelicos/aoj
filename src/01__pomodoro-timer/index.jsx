@@ -1,4 +1,4 @@
-import styles from './style/timer.module.css'
+import './style/timer.css'
 
 import { useRef, useState } from 'react'
 import ClockNumber from './components/ClockNumber'
@@ -52,16 +52,16 @@ export default function PomodoroTimer() {
   const offset = (circleWidth * (current.minutes * 60 + current.seconds)) / (saved.minutes * 60 + saved.seconds) + 'px'
 
   return (
-    <div className={styles.body}>
-      <div className={styles.wrapper}>
-        <Ring
-          strokeDasharray={`${circleWidth}px`}
-          strokeDashoffset={offset}
-          started={started}
-        />
+    <div className='aoj-01'>
+      <div className='body'>
+        <div className='wrapper'>
+          <Ring
+            strokeDasharray={`${circleWidth}px`}
+            strokeDashoffset={offset}
+            started={started}
+          />
 
-        <div className={styles.timer}>
-          <div className={styles.time}>
+          <div className='timer'>
             {edit ? (
               <ClockNumber
                 {...saved}
@@ -76,19 +76,20 @@ export default function PomodoroTimer() {
                 disabled={true}
               />
             )}
+
+            <Control
+              cb={started ? handleClickStop : handleClickStart}
+              disabled={edit}
+              msg={edit ? '.' : started ? 'STOP' : `START`}
+            />
+            <Toggle
+              handleClickGear={handleClickGear}
+              disabled={started}
+              minutes={saved.minutes}
+              seconds={saved.seconds}
+              edit={edit}
+            />
           </div>
-          <Control
-            cb={started ? handleClickStop : handleClickStart}
-            disabled={edit}
-            msg={edit ? '.' : started ? 'STOP' : `START`}
-          />
-          <Toggle
-            handleClickGear={handleClickGear}
-            disabled={started}
-            minutes={saved.minutes}
-            seconds={saved.seconds}
-            edit={edit}
-          />
         </div>
       </div>
     </div>

@@ -4,8 +4,7 @@ import { formatPrice } from '../../utils'
 import { MenuDispatchContext } from '../../contexts/MenuContext'
 import { CartDispatchContext } from '../../contexts/CartContext'
 
-import styles from '../../style/styles.module.css'
-import cartItemStyles from './style/cartitem.module.css'
+import '../../style/styles.css'
 
 function CartItem({ name, price, image, alt, count }) {
   const dispatchMenu = useContext(MenuDispatchContext)
@@ -32,28 +31,28 @@ function CartItem({ name, price, image, alt, count }) {
   }
   return (
     <li>
-      <div className={styles.plate}>
+      <div className='plate'>
         <img
           src={image}
           alt={alt}
-          className={styles.plate}
+          className='plate'
         />
-        <div className={styles.quantity}>1</div>
+        <div className='quantity'>1</div>
       </div>
-      <div className={styles.content}>
-        <p className={styles['menu-item']}>{name}</p>
-        <p className={styles.price}>{formatPrice(price)}</p>
+      <div className='content'>
+        <p className='menu-item'>{name}</p>
+        <p className='price'>{formatPrice(price)}</p>
       </div>
-      <div className={cartItemStyles['quantity__wrapper']}>
+      <div className='wrapper'>
         {count === 0 ? (
           <button
-            className={cartItemStyles.decrease}
+            className='decrease'
             onClick={handleRemove}>
             ❌
           </button>
         ) : (
           <button
-            className={cartItemStyles.decrease}
+            className='decrease'
             onClick={handleDecrease}>
             <img
               src={'/images/02__ecommerce-component/chevron.svg'}
@@ -61,9 +60,9 @@ function CartItem({ name, price, image, alt, count }) {
             />
           </button>
         )}
-        <div className={styles.quantity}>{count}</div>
+        <div className='quantity'>{count}</div>
         <button
-          className={cartItemStyles.increase}
+          className='increase'
           onClick={handleIncrease}>
           <img
             src={'/images/02__ecommerce-component/chevron.svg'}
@@ -71,7 +70,7 @@ function CartItem({ name, price, image, alt, count }) {
           />
         </button>
       </div>
-      <div className={styles.subtotal}>{formatPrice(price * count)}</div>
+      <div className='subtotal'>{formatPrice(price * count)}</div>
     </li>
   )
 }
