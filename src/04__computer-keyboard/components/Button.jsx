@@ -1,11 +1,9 @@
-import styles from '../style/styles.module.css'
+import '../style/styles.css'
 
 export default function Button({ name, code, isJiggle }) {
-  let style = styles.key
-  let utilityStyle = ' ' + styles.utility
-  let jiggleStyle = ' ' + styles.jiggle
+  let style = 'key'
   const utilities = ['Tab', 'CapsLock', 'Enter', 'ShiftLeft', 'ShiftRight']
-  if (utilities.includes(code)) style += utilityStyle
-  if (isJiggle) style += jiggleStyle
+  if (utilities.includes(code)) style += ' utility'
+  if (isJiggle) style += ' jiggle'
   return <button className={style}>{name}</button>
 }

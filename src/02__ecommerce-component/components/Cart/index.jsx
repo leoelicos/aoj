@@ -7,7 +7,7 @@ import CartItem from '../CartItem'
 
 import { formatPrice } from '../../utils'
 
-import styles from '../../style/styles.module.css'
+import '../../style/styles.css'
 
 function Cart() {
   const menu = useContext(MenuContext)
@@ -23,9 +23,9 @@ function Cart() {
   const priceTax = priceSubtotal * tax
   const priceTotal = priceSubtotal + priceTax
   return (
-    <div className={`${styles.panel} ${styles.cart}`}>
+    <div className='panel cart'>
       <h1>Your Cart{cart.length === 0 && ' Is Empty'}</h1>
-      <ul className={styles['cart-summary']}>
+      <ul className='cart-summary'>
         {cart.map((name) => {
           let m = menu.find((menuItem) => menuItem.name === name)
           return (
@@ -37,18 +37,18 @@ function Cart() {
         })}
       </ul>
 
-      <div className={styles.totals}>
-        <div className={styles['line-item']}>
-          <div className={styles.label}>Subtotal:</div>
-          <div className={`${styles.amount} ${styles.price} ${styles.subtotal}`}>{formatPrice(priceSubtotal)}</div>
+      <div className='totals'>
+        <div className='line-item'>
+          <div className='label'>Subtotal:</div>
+          <div className='amount price subtotal'>{formatPrice(priceSubtotal)}</div>
         </div>
-        <div className={styles['line-item']}>
-          <div className={styles.label}>Tax:</div>
-          <div className={`${styles.amount} ${styles.price} ${styles.tax}`}>{formatPrice(priceTax)}</div>
+        <div className='line-item'>
+          <div className='label'>Tax:</div>
+          <div className='amount price tax'>{formatPrice(priceTax)}</div>
         </div>
-        <div className={`${styles['line-item']} ${styles.total}`}>
-          <div className={styles.label}>Total:</div>
-          <div className={`${styles.amount} ${styles.price} ${styles.total}`}>{formatPrice(priceTotal)}</div>
+        <div className='line-item total'>
+          <div className='label'>Total:</div>
+          <div className='amount price total'>{formatPrice(priceTotal)}</div>
         </div>
       </div>
     </div>

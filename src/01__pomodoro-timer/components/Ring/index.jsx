@@ -1,8 +1,8 @@
-import styles from './style/Ring.module.css'
+import '../../style/timer.css'
 
 const Ring = ({ strokeDasharray, strokeDashoffset, started }) => {
   return (
-    <div className={started ? styles.ring : `${styles.ring} ${styles.ending}`}>
+    <div className={started ? 'ring' : 'ring ending'}>
       <svg
         width='518'
         height='518'

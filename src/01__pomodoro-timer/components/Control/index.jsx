@@ -1,9 +1,9 @@
-import styles from './style/control.module.css'
+import '../../style/timer.css'
 
 function Control({ cb, msg, disabled }) {
   return (
     <button
-      className={styles.start}
+      className={'start'}
       onClick={cb}
       disabled={disabled}>
       {msg}

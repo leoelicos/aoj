@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import styles from './style/styles.module.css'
+import './style/styles.css'
 
 const keys = [
   'M638.996 44.2128L740.544 30.4131L714.007 451.115H651.516L638.996 44.2128Z',
@@ -53,119 +53,122 @@ export default function Piano() {
   let k23 = useRef(null)
   const clips = [k1, k2, k3, k4, k5, k6, k7, k8, k9, k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k20, k21, k22, k23]
   return (
-    <div className={styles.body}>
-      <div className={styles.piano}>
-        <svg
-          width='1387'
-          height='467'
-          viewBox='0 0 1387 467'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'>
-          {keys.map((key, i) => (
-            <a
-              key={i}
-              onClick={() => {
-                let clip = clips[i].current
-                console.log('clip = ', clip)
-                clip.play()
-              }}
-              className={i <= 12 ? styles['white-keys'] : styles['black-keys']}>
-              <path d={key} />
-            </a>
-          ))}
-        </svg>
-        <audio
-          ref={k1}
-          src='./audio/03/key-1.mp3'
-        />
-        <audio
-          ref={k2}
-          src='./audio/03/key-2.mp3'
-        />
-        <audio
-          ref={k3}
-          src='./audio/03/key-3.mp3'
-        />
-        <audio
-          ref={k4}
-          src='./audio/03/key-4.mp3'
-        />
-        <audio
-          ref={k5}
-          src='./audio/03/key-5.mp3'
-        />
-        <audio
-          ref={k6}
-          src='./audio/03/key-6.mp3'
-        />
-        <audio
-          ref={k7}
-          src='./audio/03/key-7.mp3'
-        />
-        <audio
-          ref={k8}
-          src='./audio/03/key-8.mp3'
-        />
-        <audio
-          ref={k9}
-          src='./audio/03/key-9.mp3'
-        />
-        <audio
-          ref={k10}
-          src='./audio/03/key-10.mp3'
-        />
-        <audio
-          ref={k11}
-          src='./audio/03/key-11.mp3'
-        />
-        <audio
-          ref={k12}
-          src='./audio/03/key-12.mp3'
-        />
-        <audio
-          ref={k13}
-          src='./audio/03/key-13.mp3'
-        />
-        <audio
-          ref={k14}
-          src='./audio/03/key-14.mp3'
-        />
-        <audio
-          ref={k15}
-          src='./audio/03/key-15.mp3'
-        />
-        <audio
-          ref={k16}
-          src='./audio/03/key-16.mp3'
-        />
-        <audio
-          ref={k17}
-          src='./audio/03/key-17.mp3'
-        />
-        <audio
-          ref={k18}
-          src='./audio/03/key-18.mp3'
-        />
-        <audio
-          ref={k19}
-          src='./audio/03/key-19.mp3'
-        />
-        <audio
-          ref={k20}
-          src='./audio/03/key-20.mp3'
-        />
-        <audio
-          ref={k21}
-          src='./audio/03/key-21.mp3'
-        />
-        <audio
-          ref={k22}
-          src='./audio/03/key-22.mp3'
-        />
-        <audio
-          ref={k23}
-          src='./audio/03/key-23.mp3'
-        />
+    <div className='aoj-3'>
+      <div className='body'>
+        <div className='piano'>
+          <svg
+            width='1387'
+            height='467'
+            viewBox='0 0 1387 467'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'>
+            {keys.map((key, i) => (
+              // eslint-disable-next-line
+              <a
+                key={i}
+                onClick={() => {
+                  let clip = clips[i].current
+                  console.log('clip = ', clip)
+                  clip.play()
+                }}
+                className={i <= 12 ? 'white-keys' : 'black-keys'}>
+                <path d={key} />
+              </a>
+            ))}
+          </svg>
+          <audio
+            ref={k1}
+            src='./audio/03/key-1.mp3'
+          />
+          <audio
+            ref={k2}
+            src='./audio/03/key-2.mp3'
+          />
+          <audio
+            ref={k3}
+            src='./audio/03/key-3.mp3'
+          />
+          <audio
+            ref={k4}
+            src='./audio/03/key-4.mp3'
+          />
+          <audio
+            ref={k5}
+            src='./audio/03/key-5.mp3'
+          />
+          <audio
+            ref={k6}
+            src='./audio/03/key-6.mp3'
+          />
+          <audio
+            ref={k7}
+            src='./audio/03/key-7.mp3'
+          />
+          <audio
+            ref={k8}
+            src='./audio/03/key-8.mp3'
+          />
+          <audio
+            ref={k9}
+            src='./audio/03/key-9.mp3'
+          />
+          <audio
+            ref={k10}
+            src='./audio/03/key-10.mp3'
+          />
+          <audio
+            ref={k11}
+            src='./audio/03/key-11.mp3'
+          />
+          <audio
+            ref={k12}
+            src='./audio/03/key-12.mp3'
+          />
+          <audio
+            ref={k13}
+            src='./audio/03/key-13.mp3'
+          />
+          <audio
+            ref={k14}
+            src='./audio/03/key-14.mp3'
+          />
+          <audio
+            ref={k15}
+            src='./audio/03/key-15.mp3'
+          />
+          <audio
+            ref={k16}
+            src='./audio/03/key-16.mp3'
+          />
+          <audio
+            ref={k17}
+            src='./audio/03/key-17.mp3'
+          />
+          <audio
+            ref={k18}
+            src='./audio/03/key-18.mp3'
+          />
+          <audio
+            ref={k19}
+            src='./audio/03/key-19.mp3'
+          />
+          <audio
+            ref={k20}
+            src='./audio/03/key-20.mp3'
+          />
+          <audio
+            ref={k21}
+            src='./audio/03/key-21.mp3'
+          />
+          <audio
+            ref={k22}
+            src='./audio/03/key-22.mp3'
+          />
+          <audio
+            ref={k23}
+            src='./audio/03/key-23.mp3'
+          />
+        </div>
       </div>
     </div>
   )

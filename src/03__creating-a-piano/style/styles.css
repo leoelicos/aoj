@@ -1,8 +1,8 @@
-.body {
+.aoj-3 .body {
   background: #37b2c3;
 }
 
-.piano {
+.aoj-3 .piano {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -10,18 +10,18 @@
   justify-content: center;
 }
 
-.white-keys {
+.aoj-3 .white-keys {
   fill: white;
 }
 
-.white-keys:hover {
+.aoj-3 .white-keys:hover {
   fill: #ffd200;
 }
 
-.black-keys {
+.aoj-3 .black-keys {
   fill: black;
 }
 
-.black-keys:hover {
+.aoj-3 .black-keys:hover {
   fill: #f40082;
 }
