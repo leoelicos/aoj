@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
 
-.body {
+.aoj-4 .body {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -10,14 +10,14 @@
   padding: 0;
 }
 
-.keyboard {
+.aoj-4 .keyboard {
   background: #f6f6f6;
   padding: 45px 50px;
   border-radius: 50px;
   position: relative;
 }
 
-h1 {
+.aoj-4 h1 {
   color: #60c1b6;
   font-family: 'Inter', sans-serif;
   text-transform: uppercase;
@@ -32,7 +32,7 @@ h1 {
   transform: translateX(-50%);
 }
 
-.row {
+.aoj-4 .row {
   display: flex;
   justify-content: space-between;
   gap: 12px;
@@ -40,7 +40,7 @@ h1 {
   width: 1110px;
 }
 
-.key {
+.aoj-4 .key {
   background: #ffffff;
   box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.05);
   border: none;
@@ -59,17 +59,17 @@ h1 {
   box-sizing: border-box;
 }
 
-.utility {
+.aoj-4 .utility {
   color: #868888;
   flex: auto;
 }
 
-.key:hover {
+.aoj-4 .key:hover {
   background: #ffd200;
   color: black;
 }
 
-.jiggle {
+.aoj-4 .jiggle {
   animation: jiggle 1s;
   animation-iteration-count: infinite;
   background: #60c1b6;
