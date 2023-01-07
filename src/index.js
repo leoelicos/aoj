@@ -7,11 +7,11 @@ import './style/main.css'
 import './style/normalize.css'
 
 import Toc from './00__toc'
-import PomodoroTimer from './01__pomodoro-timer'
-import ECommerceComponent from './02__ecommerce-component'
-import Piano from './03__creating-a-piano'
-import ComputerKeyboard from './04__computer-keyboard'
-import EpisodeListing from './05__episode-listing'
+import PomodoroTimer from './01__pomodoro-timer/index.jsx'
+import ECommerceComponent from './02__ecommerce-component/index.jsx'
+import Piano from './03__creating-a-piano/index.jsx'
+import ComputerKeyboard from './04__computer-keyboard/index.jsx'
+import EpisodeListing from './05__episode-listing/index.jsx'
 
 const router = createBrowserRouter([
   { path: '/', element: <Toc />, errorElement: <ErrorPage /> },
