@@ -12,8 +12,8 @@ This is a React implementation of [Advent of Javascript](https://www.adventofjs.
 | 4   | Computer Keyboard         | useEffect, useState    |
 | 5   | Episode Listing           | useEffect, useState    |
 | 6   | Range Slider              | useState               |
-| 7   | Tip Calculator            | ❌                     |
-| 8   | Weather App               | ❌                     |
+| 7   | Tip Calculator            | useState               |
+| 8   | Weather App               | useEffect, useState    |
 | 9   | Image Carousel            | ❌                     |
 | 10  | Verification Code         | ❌                     |
 | 11  | Expanding Collapsing Faqs | ❌                     |
