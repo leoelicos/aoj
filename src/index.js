@@ -12,6 +12,7 @@ import ECommerceComponent from './02__ecommerce-component/index.jsx'
 import Piano from './03__creating-a-piano/index.jsx'
 import ComputerKeyboard from './04__computer-keyboard/index.jsx'
 import EpisodeListing from './05__episode-listing/index.jsx'
+import RangeSlider from './06__range-slider/index.jsx'
 
 const router = createBrowserRouter([
   { path: '/', element: <Toc />, errorElement: <ErrorPage /> },
@@ -19,7 +20,8 @@ const router = createBrowserRouter([
   { path: '02-ecommerce-component', element: <ECommerceComponent />, errorElement: <ErrorPage /> },
   { path: '03-creating-a-piano', element: <Piano />, errorElement: <ErrorPage /> },
   { path: '04-computer-keyboard', element: <ComputerKeyboard />, errorElement: <ErrorPage /> },
-  { path: '05-episode-listing', element: <EpisodeListing />, errorElement: <ErrorPage /> }
+  { path: '05-episode-listing', element: <EpisodeListing />, errorElement: <ErrorPage /> },
+  { path: '06-range-slider', element: <RangeSlider />, errorElement: <ErrorPage /> }
 ])
 
 const rootEl = document.getElementById('root')
