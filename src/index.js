@@ -1,4 +1,7 @@
-import { StrictMode } from 'react'
+import config from 'dotenv'
+
+// import { StrictMode } from 'react'
+import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ErrorPage from './99__error/error-page'
@@ -14,6 +17,7 @@ import ComputerKeyboard from './04__computer-keyboard/index.jsx'
 import EpisodeListing from './05__episode-listing/index.jsx'
 import RangeSlider from './06__range-slider/index.jsx'
 import TipCalculator from './07__tip-calculator/index.jsx'
+import { WeatherApp } from './08__weather-app'
 
 const router = createBrowserRouter([
   { path: '/', element: <Toc />, errorElement: <ErrorPage /> },
@@ -23,12 +27,9 @@ const router = createBrowserRouter([
   { path: '04-computer-keyboard', element: <ComputerKeyboard />, errorElement: <ErrorPage /> },
   { path: '05-episode-listing', element: <EpisodeListing />, errorElement: <ErrorPage /> },
   { path: '06-range-slider', element: <RangeSlider />, errorElement: <ErrorPage /> },
-  { path: '07-tip-calculator', element: <TipCalculator />, errorElement: <ErrorPage /> }
+  { path: '07-tip-calculator', element: <TipCalculator />, errorElement: <ErrorPage /> },
+  { path: '08-weather-app', element: <WeatherApp />, errorElement: <ErrorPage /> }
 ])
 
 const rootEl = document.getElementById('root')
-createRoot(rootEl).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>
-)
+createRoot(rootEl).render(<RouterProvider router={router} />)
