@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-.body {
+.ecommerce .body {
   background: url('./bg__left.svg') left 10% no-repeat, url('./bg__top-right.svg') right top no-repeat, #eff0f6 url('./bg__btm-right.svg') right bottom no-repeat;
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -9,7 +9,7 @@
   min-width: 100%;
 }
 
-.wrapper {
+.ecommerce .wrapper {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -19,7 +19,7 @@
   padding: 10px 0;
 }
 
-.panel {
+.ecommerce .panel {
   background: white;
   border-radius: 25px;
   box-sizing: border-box;
@@ -32,26 +32,26 @@
   overflow-x: hidden;
 }
 @media screen and (width < 900px) {
-  .wrapper {
+  .ecommerce .wrapper {
     flex-direction: column;
     height: 100%;
   }
 }
 
-h1 {
+.ecommerce h1 {
   padding-left: 40px;
   font-size: 2rem;
   font-weight: bold;
   padding-bottom: 20px;
 }
 
-ul {
+.ecommerce ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-ul.menu li {
+.ecommerce ul.menu li {
   margin-left: 15px;
   display: flex;
   padding-right: 30px;
@@ -60,23 +60,23 @@ ul.menu li {
   margin-bottom: 45px;
 }
 
-ul.menu li:nth-child(4n + 1):before {
+.ecommerce ul.menu li:nth-child(4n + 1):before {
   --background: #e1f1fe;
 }
 
-ul.menu li:nth-child(4n + 2):before {
+.ecommerce ul.menu li:nth-child(4n + 2):before {
   --background: #ffe2f0;
 }
 
-ul.menu li:nth-child(4n + 3):before {
+.ecommerce ul.menu li:nth-child(4n + 3):before {
   --background: #f7f7fe;
 }
 
-ul.menu li:nth-child(4n + 4):before {
+.ecommerce ul.menu li:nth-child(4n + 4):before {
   --background: #defef0;
 }
 
-ul.menu li:before {
+.ecommerce ul.menu li:before {
   background: var(--background);
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
@@ -90,7 +90,7 @@ ul.menu li:before {
   z-index: 1;
 }
 
-ul.menu .plate {
+.ecommerce ul.menu .plate {
   height: 148px;
   width: 148px;
   position: relative;
@@ -98,33 +98,33 @@ ul.menu .plate {
   top: -15px;
 }
 
-ul.menu .content {
+.ecommerce ul.menu .content {
   padding-top: 30px;
   position: relative;
   width: 100%;
   z-index: 3;
 }
 
-.menu-item {
+.ecommerce .menu-item {
   font-size: 1.125rem;
   line-height: 20px;
   margin: 0 0 16px 0;
   padding: 0;
 }
 
-.price,
-.subtotal {
+.ecommerce .price,
+.ecommerce .subtotal {
   font-size: 2rem;
   line-height: 1;
   font-weight: bold;
 }
 
-ul.menu .price {
+.ecommerce ul.menu .price {
   margin: 0 0 20px 0;
   padding: 0;
 }
 
-button {
+.ecommerce button {
   background: #6b00f5;
   border: none;
   cursor: pointer;
@@ -141,44 +141,44 @@ button {
   gap: 10px;
 }
 
-ul.menu button {
+.ecommerce ul.menu button {
   position: absolute;
 }
 
-button.in-cart {
+.ecommerce button.in-cart {
   background: black;
 }
 
-.cart p.empty {
+.ecommerce .cart p.empty {
   padding-left: 40px;
 }
 
-.cart-summary {
+.ecommerce .cart-summary {
   border-bottom: 5px solid #d7d7f9;
   margin: 0 30px 0 25px;
 }
 
-.cart-summary li {
+.ecommerce .cart-summary li {
   display: grid;
   grid-template-areas:
     'plate content content'
     'plate quantity price';
 }
 
-.cart-summary .menu-item {
+.ecommerce .cart-summary .menu-item {
   margin-bottom: 5px;
 }
 
-.cart-summary p {
+.ecommerce .cart-summary p {
   margin-bottom: 0;
 }
 
-.cart-summary .price {
+.ecommerce .cart-summary .price {
   margin: 0 0 16px 0;
   font-size: 1rem;
 }
 
-.cart .plate {
+.ecommerce .cart .plate {
   position: relative;
   height: 64px;
   width: 64px;
@@ -188,7 +188,7 @@ button.in-cart {
   grid-area: plate;
 }
 
-.cart .plate img {
+.ecommerce .cart .plate img {
   height: 64px;
   width: 64px;
   position: absolute;
@@ -197,11 +197,11 @@ button.in-cart {
   z-index: 1;
 }
 
-.cart-summary .content {
+.ecommerce .cart-summary .content {
   grid-area: content;
 }
 
-.cart .quantity {
+.ecommerce .cart .quantity {
   background: black;
   color: white;
   font-size: 1rem;
@@ -216,42 +216,42 @@ button.in-cart {
   z-index: 2;
 }
 
-.cart-summary li {
+.ecommerce .cart-summary li {
   border-bottom: 1px solid #d7d7f9;
   margin-bottom: 45px;
   padding-bottom: 45px;
 }
 
-.cart-summary li:last-child {
+.ecommerce .cart-summary li:last-child {
   border-bottom: 0;
   padding-bottom: 0;
 }
 
-.cart-summary li .subtotal {
+.ecommerce .cart-summary li .subtotal {
   text-align: right;
 }
 
-.totals {
+.ecommerce .totals {
   padding: 35px 30px;
 }
 
-.line-item {
+.ecommerce .line-item {
   display: flex;
   align-items: flex-end;
   text-align: right;
   margin-bottom: 20px;
 }
 
-.line-item .label {
+.ecommerce .line-item .label {
   font-size: 1rem;
   font-weight: bold;
   width: 60%;
 }
 
-.line-item .amount {
+.ecommerce .line-item .amount {
   width: 40%;
 }
 
-.line-item.total .price {
+.ecommerce .line-item.total .price {
   color: #6b00f5;
 }
