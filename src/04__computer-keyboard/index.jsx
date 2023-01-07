@@ -8,11 +8,11 @@ import codes from './data/codes'
 import Button from './components/Button'
 
 // styles
-import styles from './style/styles.module.css'
+import './style/styles.css'
 
-const Body = ({ children }) => <div className={styles.body}>{children}</div>
-const Keyboard = ({ children }) => <div className={styles.keyboard}>{children}</div>
-const Row = ({ children }) => <div className={styles.row}>{children}</div>
+const Body = ({ children }) => <div className='body'>{children}</div>
+const Keyboard = ({ children }) => <div className='keyboard'>{children}</div>
+const Row = ({ children }) => <div className='row'>{children}</div>
 
 export default function ComputerKeyboard() {
   const getRandomCode = () => codes[Math.floor(Math.random() * codes.length)]
@@ -35,24 +35,26 @@ export default function ComputerKeyboard() {
   }, [])
 
   return (
-    <Body>
-      <Keyboard>
-        <h1>Eyes on the Screen</h1>
-        {keys.map((row, i) => (
-          <Row
-            key={i}
-            row={row}>
-            {row.map(({ code, key }) => (
-              <Button
-                key={code}
-                name={key}
-                code={code}
-                isJiggle={code === jiggle}
-              />
-            ))}
-          </Row>
-        ))}
-      </Keyboard>
-    </Body>
+    <div className='aoj-4'>
+      <Body>
+        <Keyboard>
+          <h1>Eyes on the Screen</h1>
+          {keys.map((row, i) => (
+            <Row
+              key={i}
+              row={row}>
+              {row.map(({ code, key }) => (
+                <Button
+                  key={code}
+                  name={key}
+                  code={code}
+                  isJiggle={code === jiggle}
+                />
+              ))}
+            </Row>
+          ))}
+        </Keyboard>
+      </Body>
+    </div>
   )
 }
