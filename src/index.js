@@ -15,7 +15,8 @@ import ComputerKeyboard from './04__computer-keyboard/index.jsx'
 import EpisodeListing from './05__episode-listing/index.jsx'
 import RangeSlider from './06__range-slider/index.jsx'
 import TipCalculator from './07__tip-calculator/index.jsx'
-import { WeatherApp } from './08__weather-app'
+import WeatherApp from './08__weather-app/index.jsx'
+import ImageCarousel from './09-image-carousel/index.jsx'
 
 const router = createBrowserRouter([
   { path: '/', element: <Toc />, errorElement: <ErrorPage /> },
@@ -26,7 +27,8 @@ const router = createBrowserRouter([
   { path: '05-episode-listing', element: <EpisodeListing />, errorElement: <ErrorPage /> },
   { path: '06-range-slider', element: <RangeSlider />, errorElement: <ErrorPage /> },
   { path: '07-tip-calculator', element: <TipCalculator />, errorElement: <ErrorPage /> },
-  { path: '08-weather-app', element: <WeatherApp />, errorElement: <ErrorPage /> }
+  { path: '08-weather-app', element: <WeatherApp />, errorElement: <ErrorPage /> },
+  { path: '09-image-carousel', element: <ImageCarousel />, errorElement: <ErrorPage /> }
 ])
 
 const rootEl = document.getElementById('root')

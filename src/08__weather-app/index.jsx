@@ -62,7 +62,7 @@ const getSVG = (iconCode) => {
   }
 }
 
-export const WeatherApp = () => {
+export default function WeatherApp() {
   let lat, lon, city
   const ipRegistryKey = REACT_APP_08_IP_KEY
   const weatherApiKey = REACT_APP_08_WEATHER_APIKEY
