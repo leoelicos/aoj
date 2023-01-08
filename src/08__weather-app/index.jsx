@@ -10,6 +10,8 @@ import { ReactComponent as MinTemp } from './images/low.svg'
 
 import './style/styles.css'
 import { useEffect, useState } from 'react'
+const { REACT_APP_08_IP_KEY, REACT_APP_08_WEATHER_APIKEY } = process.env
+console.log({ REACT_APP_08_IP_KEY, REACT_APP_08_WEATHER_APIKEY })
 
 const getClass = (iconCode) => {
   if (iconCode === undefined) return 'sunny'
@@ -62,8 +64,8 @@ const getSVG = (iconCode) => {
 
 export const WeatherApp = () => {
   let lat, lon, city
-  const ipRegistryKey = process.env.REACT_APP_08_IP_KEY
-  const weatherApiKey = process.env.REACT_APP_08_WEATHER_APIKEY
+  const ipRegistryKey = REACT_APP_08_IP_KEY
+  const weatherApiKey = REACT_APP_08_WEATHER_APIKEY
 
   const [finalData, setFinalData] = useState([{ day: '—', date: '0', max: 0, min: 0, humidity: 0 }])
 
