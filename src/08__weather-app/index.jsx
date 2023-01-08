@@ -11,7 +11,7 @@ import { ReactComponent as MinTemp } from './images/low.svg'
 import './style/styles.css'
 import { useEffect, useState } from 'react'
 const { REACT_APP_08_IP_KEY, REACT_APP_08_WEATHER_APIKEY } = process.env
-console.log({ REACT_APP_08_IP_KEY, REACT_APP_08_WEATHER_APIKEY })
+if (!REACT_APP_08_IP_KEY || !REACT_APP_08_WEATHER_APIKEY) console.error('Environment variables undefined')
 
 const getClass = (iconCode) => {
   if (iconCode === undefined) return 'sunny'
