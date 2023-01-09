@@ -15,7 +15,7 @@ This is a React implementation of [Advent of Javascript](https://www.adventofjs.
 | 7   | Tip Calculator            | useState                    |
 | 8   | Weather App               | useEffect, useState         |
 | 9   | Image Carousel            | useEffect, useRef, useState |
-| 10  | Verification Code         | ❌                          |
+| 10  | Verification Code         | useEffect, useRef, useState |
 | 11  | Expanding Collapsing Faqs | ❌                          |
 | 12  | Rock Paper Scissors       | ❌                          |
 | 13  | Custom Modal              | ❌                          |
