@@ -18,6 +18,7 @@ import TipCalculator from './07__tip-calculator/index.jsx'
 import WeatherApp from './08__weather-app/index.jsx'
 import ImageCarousel from './09__image-carousel/index.jsx'
 import VerificationCode from './10__verification-code/index.jsx'
+import FAQs from './11__expanding-collapsing-faqs/index.jsx'
 
 const router = createBrowserRouter([
   { path: '/', element: <Toc />, errorElement: <ErrorPage /> },
@@ -30,7 +31,8 @@ const router = createBrowserRouter([
   { path: '07-tip-calculator', element: <TipCalculator />, errorElement: <ErrorPage /> },
   { path: '08-weather-app', element: <WeatherApp />, errorElement: <ErrorPage /> },
   { path: '09-image-carousel', element: <ImageCarousel />, errorElement: <ErrorPage /> },
-  { path: '10-verification-code', element: <VerificationCode />, errorElement: <ErrorPage /> }
+  { path: '10-verification-code', element: <VerificationCode />, errorElement: <ErrorPage /> },
+  { path: '11-expanding-collapsing-faqs', element: <FAQs />, errorElement: <ErrorPage /> }
 ])
 
 const rootEl = document.getElementById('root')
