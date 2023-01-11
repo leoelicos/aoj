@@ -19,6 +19,7 @@ import WeatherApp from './08__weather-app/index.jsx'
 import ImageCarousel from './09__image-carousel/index.jsx'
 import VerificationCode from './10__verification-code/index.jsx'
 import FAQs from './11__expanding-collapsing-faqs/index.jsx'
+import RockPaperScissors from './12__rock-paper-scissors'
 
 const router = createBrowserRouter([
   { path: '/', element: <Toc />, errorElement: <ErrorPage /> },
@@ -32,7 +33,8 @@ const router = createBrowserRouter([
   { path: '08-weather-app', element: <WeatherApp />, errorElement: <ErrorPage /> },
   { path: '09-image-carousel', element: <ImageCarousel />, errorElement: <ErrorPage /> },
   { path: '10-verification-code', element: <VerificationCode />, errorElement: <ErrorPage /> },
-  { path: '11-expanding-collapsing-faqs', element: <FAQs />, errorElement: <ErrorPage /> }
+  { path: '11-expanding-collapsing-faqs', element: <FAQs />, errorElement: <ErrorPage /> },
+  { path: '12-rock-paper-scissors', element: <RockPaperScissors />, errorElement: <ErrorPage /> }
 ])
 
 const rootEl = document.getElementById('root')
