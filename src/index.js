@@ -20,6 +20,7 @@ import ImageCarousel from './09__image-carousel/index.jsx'
 import VerificationCode from './10__verification-code/index.jsx'
 import FAQs from './11__expanding-collapsing-faqs/index.jsx'
 import RockPaperScissors from './12__rock-paper-scissors'
+import CustomModal from './13__custom-modal'
 
 const router = createBrowserRouter([
   { path: '/', element: <Toc />, errorElement: <ErrorPage /> },
@@ -34,7 +35,8 @@ const router = createBrowserRouter([
   { path: '09-image-carousel', element: <ImageCarousel />, errorElement: <ErrorPage /> },
   { path: '10-verification-code', element: <VerificationCode />, errorElement: <ErrorPage /> },
   { path: '11-expanding-collapsing-faqs', element: <FAQs />, errorElement: <ErrorPage /> },
-  { path: '12-rock-paper-scissors', element: <RockPaperScissors />, errorElement: <ErrorPage /> }
+  { path: '12-rock-paper-scissors', element: <RockPaperScissors />, errorElement: <ErrorPage /> },
+  { path: '13-custom-modal', element: <CustomModal />, errorElement: <ErrorPage /> }
 ])
 
 const rootEl = document.getElementById('root')
