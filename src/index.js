@@ -23,6 +23,7 @@ import RockPaperScissors from './12__rock-paper-scissors'
 import CustomModal from './13__custom-modal'
 import CalendarPicker from './14__calendar-picker'
 import YoutubeAPI from './15__youtube-api'
+import StarRating from './16__star-rating'
 
 const router = createBrowserRouter([
   { path: '/', element: <Toc />, errorElement: <ErrorPage /> },
@@ -40,7 +41,8 @@ const router = createBrowserRouter([
   { path: '12-rock-paper-scissors', element: <RockPaperScissors />, errorElement: <ErrorPage /> },
   { path: '13-custom-modal', element: <CustomModal />, errorElement: <ErrorPage /> },
   { path: '14-calendar-picker', element: <CalendarPicker />, errorElement: <ErrorPage /> },
-  { path: '15-youtube-api', element: <YoutubeAPI />, errorElement: <ErrorPage /> }
+  { path: '15-youtube-api', element: <YoutubeAPI />, errorElement: <ErrorPage /> },
+  { path: '16-star-rating', element: <StarRating />, errorElement: <ErrorPage /> }
 ])
 
 const rootEl = document.getElementById('root')

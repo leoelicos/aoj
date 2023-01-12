@@ -1,0 +1,27 @@
+.aoj-16 .body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.aoj-16 .star-rating {
+  display: flex;
+}
+
+.aoj-16 .star svg.hover {
+  stroke: #dad600;
+  stroke-width: 10px;
+}
+.aoj-16 .star svg.saved {
+  stroke-width: 0;
+  fill: #a08405;
+}
+
+.aoj-16 .star {
+  stroke: #757575;
+  stroke-width: 10px;
+}
