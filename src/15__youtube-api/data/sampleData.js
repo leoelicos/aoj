@@ -256,7 +256,7 @@ const sampleAPIResponse = {
       snippet: {
         publishedAt: '2021-11-15T15:13:57Z',
         channelId: 'UC-T8W79DN6PBnzomelvqJYw',
-        title: 'My New Job as a Staff Developer Advocate - Here&#39;s What I&#39;ll Be Doing!',
+        title: "My New Job as a Staff Developer Advocate - Here's What I'll Be Doing!",
         description: 'I started my new job as a Staff Developer Advocate at PlanetScale! PlanetScale - https://planetscale.com/ PlanetScale Twitter ...',
         thumbnails: {
           default: {
@@ -290,7 +290,7 @@ const sampleAPIResponse = {
       snippet: {
         publishedAt: '2021-11-12T15:11:23Z',
         channelId: 'UC-T8W79DN6PBnzomelvqJYw',
-        title: 'React vs Vue - Which One Do We Like More with Debbie O&#39;Brien',
+        title: "React vs Vue - Which One Do We Like More with Debbie O'Brien",
         description: 'Transitioning from Vue to React. Debbie joins to talk all about it: her learning process, which features she likes more from which ...',
         thumbnails: {
           default: {
@@ -358,7 +358,7 @@ const sampleAPIResponse = {
       snippet: {
         publishedAt: '2021-11-09T19:38:48Z',
         channelId: 'UC-T8W79DN6PBnzomelvqJYw',
-        title: 'I QUIT My Job - Here&#39;s Why!',
+        title: "I QUIT My Job - Here's Why!",
         description: 'I quit my current job...let me explain why. Newsletter Interested in exclusive content and discounts? Sign up for the newsletter!',
         thumbnails: {
           default: {
@@ -426,7 +426,7 @@ const sampleAPIResponse = {
       snippet: {
         publishedAt: '2021-10-29T15:50:38Z',
         channelId: 'UC-T8W79DN6PBnzomelvqJYw',
-        title: 'BRAND NEW VS Code Theme for Halloween - It&#39;s Spoooooky',
+        title: "BRAND NEW VS Code Theme for Halloween - It's Spoooooky",
         description: 'Hot new VS Code Theme for Halloween. Spooky Scary Color Theme - https://marketplace.visualstudio.com/items?',
         thumbnails: {
           default: {
