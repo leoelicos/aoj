@@ -16,11 +16,11 @@ This is a React implementation of [Advent of Javascript](https://www.adventofjs.
 | 8   | Weather App               | useEffect, useState         |
 | 9   | Image Carousel            | useEffect, useRef, useState |
 | 10  | Verification Code         | useEffect, useRef, useState |
-| 11  | Expanding Collapsing Faqs | ❌                          |
-| 12  | Rock Paper Scissors       | ❌                          |
-| 13  | Custom Modal              | ❌                          |
-| 14  | Calendar Picker           | ❌                          |
-| 15  | Youtube API               | ❌                          |
+| 11  | Expanding Collapsing Faqs | useState                    |
+| 12  | Rock Paper Scissors       | useState, useRef            |
+| 13  | Custom Modal              | useState                    |
+| 14  | Calendar Picker           | useEffect, useRef, useState |
+| 15  | Youtube API               | useState                    |
 | 16  | Star Rating               | ❌                          |
 | 17  | Sidebar Highlight         | ❌                          |
 | 18  | Password Generator        | ❌                          |
