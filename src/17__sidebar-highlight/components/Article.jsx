@@ -8,7 +8,8 @@ export default function Article() {
         Earlier, this week, this post came across my feed:
         <a
           href='https://azumbrunnen.me/blog/framer-is-dead/'
-          target='_blank'>
+          target='_blank'
+          rel='noreferrer'>
           “Framer is Dead.”
         </a>
       </p>
@@ -28,8 +29,9 @@ export default function Article() {
       <p>
         Before Framer, we were using{' '}
         <a
-          href='http://invision.com'
-          target='_blank'>
+          href='http://invision.com/'
+          target='_blank'
+          rel='noreferrer'>
           Invision
         </a>{' '}
         for prototyping. At best, this experience felt clunky. I was taking static images, creating hot spots, and linking them together. If anything, it demonstrated how screens were linked together. But, during pitches, there was still a considerable amount of hand waving and, “Imagine this. The user will scroll down, and this will happen…”
@@ -51,8 +53,9 @@ export default function Article() {
           <p>
             In November (2020), I started working with a new client, designing a native application. About the same time, I was listening to the{' '}
             <a
-              href='https://designdetails.fm/episodes/h5VhO2W3'
-              target='_blank'>
+              href='https://designdetails.fm/episodes/h5VhO2W3/'
+              target='_blank'
+              rel='noreferrer'>
               Design Details Podcast, Episode 377: Future-Proof Designer
             </a>
             . One of the skills they talked about was prototyping. <strong>The best designers at prototyping are the best communicators.</strong>
@@ -105,13 +108,15 @@ export default function Article() {
         With the release of{' '}
         <a
           href='https://www.framer.com/blog/posts/5-interactive-components-with-variants/'
-          target='_blank'>
+          target='_blank'
+          rel='noreferrer'>
           Variants
         </a>
         and{' '}
         <a
           href='https://www.framer.com/blog/posts/announcing-smart-components/'
-          target='_blank'>
+          target='_blank'
+          rel='noreferrer'>
           Smart Components
         </a>
         , the sky's the limit.
@@ -163,13 +168,15 @@ export default function Article() {
         I also have access to the <strong>package.json</strong> file to install npm packages, like any other project. This only extends my toolset, giving me access to packages like{' '}
         <a
           href='https://styled-components.com/'
-          target='_blank'>
+          target='_blank'
+          rel='noreferrer'>
           Styled Components
         </a>{' '}
         and{' '}
         <a
           href='https://date-fns.org/'
-          target='_blank'>
+          target='_blank'
+          rel='noreferrer'>
           date-fns
         </a>
         .
@@ -178,13 +185,15 @@ export default function Article() {
         All code is committed to <strong>version control</strong>, either{' '}
         <a
           href='http://github.com/'
-          target='_blank'>
+          target='_blank'
+          rel='noreferrer'>
           GitHub
         </a>{' '}
         or{' '}
         <a
           href='https://bitbucket.org/'
-          target='_blank'>
+          target='_blank'
+          rel='noreferrer'>
           BitBucket
         </a>
         . This creates a better workflow for me, but also gives easy access to the engineers on the project.
@@ -203,8 +212,9 @@ export default function Article() {
       <p>
         Once I have a working prototype, I'll upload the project to <strong>Framer Web</strong>. This makes it easy to generate share links. Even better, if someone has the{' '}
         <a
-          href='#'
-          target='_blank'>
+          href='https://www.framer.com/learn/previewing/'
+          target='_blank'
+          rel='noreferrer'>
           Framer Preview App
         </a>{' '}
         on their mobile device, I can generate a QR Code that allows them to interact with the prototype on their phone, just like the final native app.
