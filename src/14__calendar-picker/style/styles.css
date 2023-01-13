@@ -7,7 +7,7 @@
   min-height: 100vh;
   background: #fbfbfb;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   font-family: 'Roboto', sans-serif;
   font-size: 2rem;
