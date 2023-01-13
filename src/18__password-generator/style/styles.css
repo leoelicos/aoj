@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@400;700&display=swap');
 
-body {
+.aoj-18 .body {
   min-width: 100vw;
   min-height: 100vh;
   display: flex;
@@ -12,13 +12,13 @@ body {
   color: #31292f;
 }
 
-.field {
+.aoj-18 .field {
   display: flex;
   align-items: center;
   margin-bottom: 24px;
 }
 
-input[type='text'] {
+.aoj-18 input[type='text'] {
   font-family: 'Roboto Mono', monospace;
   background: #ffffff;
   box-shadow: 0px 0px 24px #cadbd2;
@@ -35,7 +35,7 @@ input[type='text'] {
   margin-right: 18px;
 }
 
-.copy {
+.aoj-18 .copy {
   background: none;
   border: none;
   color: #7da9ae;
@@ -48,30 +48,30 @@ input[type='text'] {
   min-width: 140px;
 }
 
-.copy svg {
+.aoj-18 .copy svg {
   fill: currentColor;
   margin-right: 0px;
 }
 
-.copy span {
+.aoj-18 .copy span {
   display: none;
 }
 
-.copy.copied {
+.aoj-18 .copy.copied {
   color: #4a9661;
   font-weight: bold;
 }
 
-.copy.copied span {
+.aoj-18 .copy.copied span {
   display: block;
 }
 
-input[type='range'] {
+.aoj-18 input[type='range'] {
   -webkit-appearance: none;
   appearance: none;
 }
 
-input[type='range']::-webkit-slider-thumb {
+.aoj-18 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   height: 35px;
@@ -83,7 +83,7 @@ input[type='range']::-webkit-slider-thumb {
   top: -12px;
 }
 
-input[type='range']::-moz-range-thumb {
+.aoj-18 input[type='range']::-moz-range-thumb {
   height: 35px;
   width: 35px;
   border-radius: 50%;
@@ -93,7 +93,7 @@ input[type='range']::-moz-range-thumb {
   top: -12px;
 }
 
-input[type='range']::-ms-thumb {
+.aoj-18 input[type='range']::-ms-thumb {
   height: 35px;
   width: 35px;
   border-radius: 50%;
@@ -103,23 +103,23 @@ input[type='range']::-ms-thumb {
   top: -12px;
 }
 
-input[type='range']::-webkit-slider-runnable-track {
+.aoj-18 input[type='range']::-webkit-slider-runnable-track {
   background: #cedfe1;
   border-radius: 4px;
   width: 385px;
   height: 9px;
 }
 
-input[type='range'] {
+.aoj-18 input[type='range'] {
   width: 385px;
   margin-right: 35px;
 }
 
-input[type='checkbox'] {
+.aoj-18 input[type='checkbox'] {
   display: none;
 }
 
-input[type='checkbox'] + label {
+.aoj-18 input[type='checkbox'] + label {
   background: url('../images/checkbox--unchecked.svg') left top no-repeat;
   padding-left: 50px;
   min-height: 35px;
@@ -127,6 +127,6 @@ input[type='checkbox'] + label {
   cursor: pointer;
 }
 
-input[type='checkbox']:checked + label {
+.aoj-18 input[type='checkbox']:checked + label {
   background: url('../images/checkbox--checked.svg') left top no-repeat;
 }
