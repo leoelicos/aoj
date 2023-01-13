@@ -40,7 +40,8 @@
   top: 12px;
 }
 
-.aoj-21 input[type='text'] {
+.aoj-21 input[type='text'],
+.aoj-21 input[type='number'] {
   background: #323645;
   border-radius: 16px;
   padding: 35px 20px 15px;
@@ -54,11 +55,13 @@
   outline: none;
 }
 
-.aoj-21 input[type='text']:focus {
+.aoj-21 input[type='text']:focus,
+.aoj-21 input[type='number']:focus {
   border: 2px solid var(--primary);
 }
 
-.aoj-21 input[type='text']:focus + label {
+.aoj-21 input[type='text']:focus + label,
+.aoj-21 input[type='number']:focus + label {
   color: var(--primary);
 }
 
@@ -84,6 +87,10 @@
   border: none;
   background: none;
   cursor: pointer;
+}
+
+.aoj-21 button.add-expense-button:disabled svg path {
+  fill: #323645;
 }
 
 .aoj-21 .expenses-panel {
