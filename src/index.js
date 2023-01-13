@@ -27,6 +27,7 @@ import StarRating from './16__star-rating'
 import SidebarHighlight from './17__sidebar-highlight'
 import PasswordGenerator from './18__password-generator'
 import SignupForm from './19__signup-form'
+import TabComponent from './20__tab-component'
 
 const router = createBrowserRouter([
   { path: '/', element: <Toc />, errorElement: <ErrorPage /> },
@@ -48,7 +49,8 @@ const router = createBrowserRouter([
   { path: '16-star-rating', element: <StarRating />, errorElement: <ErrorPage /> },
   { path: '17-sidebar-highlight', element: <SidebarHighlight />, errorElement: <ErrorPage /> },
   { path: '18-password-generator', element: <PasswordGenerator />, errorElement: <ErrorPage /> },
-  { path: '19-signup-form', element: <SignupForm />, errorElement: <ErrorPage /> }
+  { path: '19-signup-form', element: <SignupForm />, errorElement: <ErrorPage /> },
+  { path: '20-tab-component', element: <TabComponent />, errorElement: <ErrorPage /> }
 ])
 
 const rootEl = document.getElementById('root')
