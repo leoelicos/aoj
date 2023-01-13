@@ -1,89 +1,57 @@
+import { useState } from 'react'
+import episodes from './data/app'
+import { ReactComponent as Logo } from './images/logo.svg'
+import './style/styles.css'
+
 export default function TabComponent() {
+  const [selected, setSelected] = useState(episodes[0])
+
   return (
     <div className='aoj-20'>
-      <body>
-        <div class='wrapper'>
+      <div className='body'>
+        <div className='wrapper'>
           <aside>
             <a
               href='http://compressed.fm'
               target='_blank'>
-              <img
-                src='./images/logo.svg'
-                alt='Compressed.fm'
-              />
+              <Logo />
             </a>
             <ul id='tabs'>
-              <li class='selected'>
-                <a href='#'>
-                  <div class='episode'>Episode 39</div>
-                  <div class='title'>Tech to Look Forward to in 2022</div>
-                </a>
-              </li>
-
-              <li>
-                <a href='#'>
-                  <div class='episode'>Episode 39</div>
-                  <div class='title'>Tech to Look Forward to in 2022</div>
-                </a>
-              </li>
-
-              <li>
-                <a href='#'>
-                  <div class='episode'>Episode 39</div>
-                  <div class='title'>Tech to Look Forward to in 2022</div>
-                </a>
-              </li>
-
-              <li>
-                <a href='#'>
-                  <div class='episode'>Episode 39</div>
-                  <div class='title'>Tech to Look Forward to in 2022</div>
-                </a>
-              </li>
-
-              <li>
-                <a href='#'>
-                  <div class='episode'>Episode 39</div>
-                  <div class='title'>Tech to Look Forward to in 2022</div>
-                </a>
-              </li>
-
-              <li>
-                <a href='#'>
-                  <div class='episode'>Episode 39</div>
-                  <div class='title'>Tech to Look Forward to in 2022</div>
-                </a>
-              </li>
-
-              <li>
-                <a href='#'>
-                  <div class='episode'>Episode 39</div>
-                  <div class='title'>Tech to Look Forward to in 2022</div>
-                </a>
-              </li>
+              {episodes.map((episode) => (
+                <li
+                  key={episode.title}
+                  className={episode.id === selected.id ? 'selected' : ''}>
+                  <button
+                    onClick={() => {
+                      setSelected(episodes.find((e) => episode.id === e.id))
+                    }}>
+                    <div className='episode'>Episode {episode.id}</div>
+                    <div className='title'>{episode.title}</div>
+                  </button>
+                </li>
+              ))}
             </ul>
           </aside>
 
           <main>
-            <div class='cover'>
+            <div className='cover'>
               <img
-                src='./images/cover__episode-39.png'
-                alt='Episode 39'
+                src={selected.cover}
+                alt={`Episode ${selected.id}`}
               />
             </div>
-            <div class='content'>
-              <h1>Tech to Look Forward to in 2022</h1>
-              <p>In this episode, Amy and James discuss the future of web development: Astro, Veet, Supabase, SvelteKit, Redwood.js, Blitz.js, GitHub Co-Pilot, Web Assembly, Blockchain, w3, no-code, and low-code.</p>
+            <div className='content'>
+              <h1>{selected.title}</h1>
+              <p>{selected.description}</p>
               <a
-                href='#'
-                class='more'>
+                href={selected.link}
+                className='more'>
                 More
               </a>
             </div>
           </main>
         </div>
-        <script src='app.js'></script>
-      </body>
+      </div>
     </div>
   )
 }
