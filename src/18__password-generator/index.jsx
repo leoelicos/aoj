@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ReactComponent as Copy } from './images/copy.svg'
 
 import './style/styles.css'
@@ -11,7 +11,7 @@ export default function PasswordGenerator() {
   const [includeNumbers, setIncludeNumbers] = useState(true)
   const [includeLowercase, setIncludeLowercase] = useState(true)
   const [includeUppercase, setIncludeUppercase] = useState(true)
-  const [includeSimilar, setIncludeSimilar] = useState(true)
+  const [includeSimilar, setIncludeSimilar] = useState(true) //(i, l, 1, L, o, 0, O)
   const handleChangeLength = (e) => {
     setLength(e.target.value)
   }
@@ -31,6 +31,23 @@ export default function PasswordGenerator() {
     setIncludeSimilar(e.target.checked)
   }
 
+  useEffect(() => {
+    console.log('Generating password')
+    let pool = []
+    if (includeSymbols) pool = pool.concat('@#$%'.split(''))
+    if (includeNumbers) pool = pool.concat('0123456789'.split(''))
+    if (includeLowercase) pool = pool.concat('abcdefghijklmnopqrstuvwxyz'.split(''))
+    if (includeUppercase) pool = pool.concat('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''))
+    if (!includeSimilar) pool = pool.filter((v) => !['i', 'l', '1', 'L', 'o', '0', 'O'].includes(v))
+
+    setPassword(
+      new Array(+length)
+        .fill(0)
+        .map(() => pool[Math.floor(Math.random() * pool.length)])
+        .join('')
+    )
+  }, [length, includeSymbols, includeNumbers, includeLowercase, includeUppercase, includeSimilar])
+
   return (
     <div className='aoj-18'>
       <div className='body'>
@@ -45,11 +62,19 @@ export default function PasswordGenerator() {
               max='32'
               steps='1'
               readOnly
+              onClick={async () => {
+                await navigator.clipboard.writeText(password)
+                setCopied(true)
+                setTimeout(() => {
+                  setCopied(false)
+                }, 2000)
+              }}
             />
 
             <button
               className={`copy ${copied ? 'copied' : ''}`}
-              onClick={() => {
+              onClick={async () => {
+                await navigator.clipboard.writeText(password)
                 setCopied(true)
                 setTimeout(() => {
                   setCopied(false)
@@ -70,7 +95,7 @@ export default function PasswordGenerator() {
               max='32'
               onChange={handleChangeLength}
             />
-            <span id='lengthText'>12</span>&nbsp;characters
+            <span id='lengthText'>{length}</span>&nbsp;characters
           </div>
 
           <div className='field'>
