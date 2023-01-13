@@ -26,8 +26,8 @@ This is a React implementation of [Advent of Javascript](https://www.adventofjs.
 | 18  | Password Generator        | useEffect, useState         |
 | 19  | Signup Form               | useState                    |
 | 20  | Tab Component             | useState                    |
-| 21  | Simplified Budget         | ❌                          |
-| 22  | Credit Card Form          | ❌                          |
+| 21  | Simplified Budget         | useState                    |
+| 22  | Credit Card Form          | useState                    |
 | 23  | Toaster                   | ❌                          |
 | 24  | Table Of Data             | ❌                          |
 
