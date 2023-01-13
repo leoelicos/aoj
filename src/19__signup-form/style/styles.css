@@ -106,6 +106,10 @@
   margin-top: 10px;
 }
 
+.aoj-19 input[type='submit']:disabled {
+  background: gray;
+}
+
 .aoj-19 .error,
 .aoj-19 .success {
   position: absolute;
