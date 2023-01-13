@@ -26,7 +26,8 @@ export default function SidebarHighlight() {
     setHeadingOffsets(headings.current.map((heading) => heading.offsetTop))
   }, [])
 
-  const handleClick = (i) => {
+  const handleClick = (e, i) => {
+    e.preventDefault()
     headings.current[i].scrollIntoView()
     setCurrentView(i)
   }
@@ -43,7 +44,7 @@ export default function SidebarHighlight() {
                   <li
                     key={title}
                     className={i === currentView ? 'selected' : ''}>
-                    <a onClick={() => handleClick(i)}>{title}</a>
+                    <button onClick={(e) => handleClick(e, i)}>{title}</button>
                   </li>
                 ))}
               </ul>
