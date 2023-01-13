@@ -21,11 +21,11 @@ This is a React implementation of [Advent of Javascript](https://www.adventofjs.
 | 13  | Custom Modal              | useState                    |
 | 14  | Calendar Picker           | useEffect, useRef, useState |
 | 15  | Youtube API               | useState                    |
-| 16  | Star Rating               | ❌                          |
-| 17  | Sidebar Highlight         | ❌                          |
-| 18  | Password Generator        | ❌                          |
-| 19  | Signup Form               | ❌                          |
-| 20  | Tab Component             | ❌                          |
+| 16  | Star Rating               | useEffect, useRef, useState |
+| 17  | Sidebar Highlight         | useState, useRef, useEffect |
+| 18  | Password Generator        | useEffect, useState         |
+| 19  | Signup Form               | useState                    |
+| 20  | Tab Component             | useState                    |
 | 21  | Simplified Budget         | ❌                          |
 | 22  | Credit Card Form          | ❌                          |
 | 23  | Toaster                   | ❌                          |
