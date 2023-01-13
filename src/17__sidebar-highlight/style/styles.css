@@ -106,15 +106,17 @@
   border-left: 2px solid #f40082;
 }
 
-.aoj-17 aside ul li a {
+.aoj-17 aside ul li button {
   background-color: rgba(0, 0, 0, 0.03);
   text-decoration: none;
   color: black;
   font-weight: normal;
   cursor: pointer;
+  border: none;
+  text-align: left;
 }
 
-.aoj-17 aside ul li.selected a {
+.aoj-17 aside ul li.selected button {
   font-weight: bold;
   color: #f40082;
 }
