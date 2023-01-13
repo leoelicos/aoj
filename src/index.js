@@ -29,6 +29,7 @@ import PasswordGenerator from './18__password-generator'
 import SignupForm from './19__signup-form'
 import TabComponent from './20__tab-component'
 import SimplifiedBudget from './21__simplified-budget'
+import CreditCardForm from './22__credit-card-form'
 
 const router = createBrowserRouter([
   { path: '/', element: <Toc />, errorElement: <ErrorPage /> },
@@ -52,7 +53,8 @@ const router = createBrowserRouter([
   { path: '18-password-generator', element: <PasswordGenerator />, errorElement: <ErrorPage /> },
   { path: '19-signup-form', element: <SignupForm />, errorElement: <ErrorPage /> },
   { path: '20-tab-component', element: <TabComponent />, errorElement: <ErrorPage /> },
-  { path: '21-simplified-budget', element: <SimplifiedBudget />, errorElement: <ErrorPage /> }
+  { path: '21-simplified-budget', element: <SimplifiedBudget />, errorElement: <ErrorPage /> },
+  { path: '22-credit-card-form', element: <CreditCardForm />, errorElement: <ErrorPage /> }
 ])
 
 const rootEl = document.getElementById('root')
