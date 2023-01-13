@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+.aoj-17 .body {
+  padding: 0;
+  margin: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+.aoj-17 h1 {
+  font-size: 4.5rem;
+  line-height: 1;
+  font-weight: 900;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+.aoj-17 h2 {
+  font-weight: 400;
+  font-size: 1.625rem;
+  margin: 0 0 40px;
+}
+
+.aoj-17 h3 {
+  font-size: 1.625rem;
+  line-height: 2rem;
+  font-weight: 800;
+}
+
+.aoj-17 a {
+  color: #f40082;
+  font-weight: 800;
+}
+
+.aoj-17 blockquote {
+  font-size: 1.625rem;
+  color: #8b8b8b;
+  max-width: 466px;
+  margin: 38px auto;
+}
+
+.aoj-17 caption {
+  text-align: center;
+  color: gray;
+  font-size: 0.875rem;
+}
+
+.aoj-17 .image-text-wrapper {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 70px;
+  /* margin-left: -70px; */
+  padding-top: 50px;
+}
+
+.aoj-17 .image {
+  /* margin-left: -70px; */
+  margin-bottom: 50px;
+  padding-top: 50px;
+}
+
+.aoj-17 .image-text-wrapper__image,
+.aoj-17 .image-text-wrapper__content {
+  flex: 1;
+}
+
+.aoj-17 .content {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-column-gap: 20px;
+}
+
+.aoj-17 aside {
+  grid-column: 2 / span 2;
+}
+
+.aoj-17 aside > div {
+  position: sticky;
+  padding-top: 150px;
+  top: 0px;
+}
+
+.aoj-17 aside .table-of-contents {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 3px;
+  padding-left: 24px;
+  margin-bottom: 30px;
+}
+
+.aoj-17 aside ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.aoj-17 aside ul li {
+  margin-bottom: 30px;
+  padding: 0 0 0 24px;
+  font-size: 1rem;
+}
+
+.aoj-17 aside ul li.selected {
+  color: #f40082;
+  border-left: 2px solid #f40082;
+}
+
+.aoj-17 aside ul li a {
+  background-color: rgba(0, 0, 0, 0.03);
+  text-decoration: none;
+  color: black;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.aoj-17 aside ul li.selected a {
+  font-weight: bold;
+  color: #f40082;
+}
+
+.aoj-17 main {
+  /* padding-top: 50px; */
+  grid-column: 5 / span 7;
+  /* margin-left: 100px; */
+  /* background-color: #f40082; */
+  height: 100vh;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.aoj-17 p {
+  font-size: 1rem;
+  line-height: 2;
+}
+
+.aoj-17 img {
+  max-width: 100%;
+}
