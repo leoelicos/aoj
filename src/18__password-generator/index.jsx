@@ -1,7 +1,35 @@
 import { useState } from 'react'
 import { ReactComponent as Copy } from './images/copy.svg'
+
+import './style/styles.css'
+
 export default function PasswordGenerator() {
   const [copied, setCopied] = useState(false)
+  const [length, setLength] = useState(12)
+  const [password, setPassword] = useState('')
+  const [includeSymbols, setIncludeSymbols] = useState(true)
+  const [includeNumbers, setIncludeNumbers] = useState(true)
+  const [includeLowercase, setIncludeLowercase] = useState(true)
+  const [includeUppercase, setIncludeUppercase] = useState(true)
+  const [includeSimilar, setIncludeSimilar] = useState(true)
+  const handleChangeLength = (e) => {
+    setLength(e.target.value)
+  }
+  const handleChangeIncludeSymbols = (e) => {
+    setIncludeSymbols(e.target.checked)
+  }
+  const handleChangeIncludeNumbers = (e) => {
+    setIncludeNumbers(e.target.checked)
+  }
+  const handleChangeIncludeLowercase = (e) => {
+    setIncludeLowercase(e.target.checked)
+  }
+  const handleChangeIncludeUppercase = (e) => {
+    setIncludeUppercase(e.target.checked)
+  }
+  const handleChangeIncludeSimilar = (e) => {
+    setIncludeSimilar(e.target.checked)
+  }
 
   return (
     <div className='aoj-18'>
@@ -12,13 +40,21 @@ export default function PasswordGenerator() {
               type='text'
               name='password'
               id='password'
-              value=''
+              value={password}
               min='6'
               max='32'
               steps='1'
+              readOnly
             />
 
-            <button className={`copy ${copied ? 'copied' : ''}`}>
+            <button
+              className={`copy ${copied ? 'copied' : ''}`}
+              onClick={() => {
+                setCopied(true)
+                setTimeout(() => {
+                  setCopied(false)
+                }, 2000)
+              }}>
               <Copy />
               <span>Copied!</span>
             </button>
@@ -29,11 +65,12 @@ export default function PasswordGenerator() {
               type='range'
               name='length'
               id='length'
-              value='12'
+              value={length}
               min='6'
               max='32'
+              onChange={handleChangeLength}
             />
-            <span id='lengthText'>12</span> characters
+            <span id='lengthText'>12</span>&nbsp;characters
           </div>
 
           <div className='field'>
@@ -41,10 +78,10 @@ export default function PasswordGenerator() {
               type='checkbox'
               name='symbols'
               id='symbols'
-              value='true'
-              checked='true'
+              checked={includeSymbols}
+              onChange={handleChangeIncludeSymbols}
             />
-            <label for='symbols'>
+            <label htmlFor='symbols'>
               <strong>Include Symbols</strong> (@#$%)
             </label>
           </div>
@@ -54,9 +91,10 @@ export default function PasswordGenerator() {
               type='checkbox'
               name='numbers'
               id='numbers'
-              checked='true'
+              checked={includeNumbers}
+              onChange={handleChangeIncludeNumbers}
             />
-            <label for='numbers'>
+            <label htmlFor='numbers'>
               <strong>Include Numbers</strong> (1234)
             </label>
           </div>
@@ -66,9 +104,10 @@ export default function PasswordGenerator() {
               type='checkbox'
               name='lowercase'
               id='lowercase'
-              checked='true'
+              checked={includeLowercase}
+              onChange={handleChangeIncludeLowercase}
             />
-            <label for='lowercase'>
+            <label htmlFor='lowercase'>
               <strong>Include Lowercase Characters</strong> (abcd)
             </label>
           </div>
@@ -78,9 +117,10 @@ export default function PasswordGenerator() {
               type='checkbox'
               name='uppercase'
               id='uppercase'
-              checked='true'
+              checked={includeUppercase}
+              onChange={handleChangeIncludeUppercase}
             />
-            <label for='uppercase'>
+            <label htmlFor='uppercase'>
               <strong>Include Uppercase Characters</strong> (ABCD)
             </label>
           </div>
@@ -90,14 +130,14 @@ export default function PasswordGenerator() {
               type='checkbox'
               name='similar'
               id='similar'
-              checked='true'
+              checked={includeSimilar}
+              onChange={handleChangeIncludeSimilar}
             />
-            <label for='similar'>
+            <label htmlFor='similar'>
               <strong>Include Similar Characters</strong> (i, l, 1, L, o, 0, O)
             </label>
           </div>
         </div>
-        <script src='app.js'></script>
       </div>
     </div>
   )
