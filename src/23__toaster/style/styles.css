@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Mono:wght@700&display=swap');
 
-:root {
-  --primary: #FAFF00;
+.aoj-23 {
+  --primary: #faff00;
 }
 
-body {
+.aoj-23 .body {
   padding: 0;
   margin: 0;
   min-width: 100vw;
@@ -12,8 +12,8 @@ body {
   font-family: 'Bebas Neue', cursive;
 }
 
-.toaster {
-  background: #8D58FF;
+.aoj-23 .toaster {
+  background: #8d58ff;
   color: white;
   padding: 55px;
   width: 520px;
@@ -23,17 +23,17 @@ body {
   transition: bottom 1s ease-in-out;
 }
 
-.toaster.collapsed {
+.aoj-23 .toaster.collapsed {
   bottom: -600px;
 }
 
-.close {
+.aoj-23 .close {
   position: absolute;
   top: -40px;
   left: 45px;
 }
 
-.close-toaster {
+.aoj-23 .close-toaster {
   background: none;
   border: none;
   text-transform: uppercase;
@@ -46,11 +46,11 @@ body {
   align-items: center;
   gap: 20px;
   font-family: 'Bebas Neue', cursive;
-  color: #3200A0;
+  color: #3200a0;
   cursor: pointer;
 }
 
-h1 {
+.aoj-23 h1 {
   font-family: 'Bebas Neue', cursive;
   text-transform: uppercase;
   font-size: 5.875rem;
@@ -60,14 +60,14 @@ h1 {
   font-weight: normal;
 }
 
-p {
+.aoj-23 p {
   font-family: 'Roboto Mono', monospace;
   font-size: 1rem;
   line-height: 1.875rem;
   padding-bottom: 30px;
 }
 
-.cover {
+.aoj-23 .cover {
   position: absolute;
   right: -120px;
   top: -120px;
@@ -75,16 +75,16 @@ p {
   opacity: 1;
 }
 
-.collapsed .cover {
+.aoj-23 .collapsed .cover {
   opacity: 0;
 }
 
-form {
+.aoj-23 form {
   display: flex;
   align-items: center;
 }
 
-label {
+.aoj-23 label {
   color: var(--primary);
   font-family: 'Roboto Mono', monospace;
   text-transform: uppercase;
@@ -95,7 +95,7 @@ label {
   margin-bottom: 10px;
 }
 
-input[type=email] {
+.aoj-23 input[type='email'] {
   background: #b686ff;
   width: 325px;
   height: 55px;
@@ -105,10 +105,10 @@ input[type=email] {
   font-size: 1.125;
   padding: 0 20px;
   border: none;
-  margin-right: 10px;;
+  margin-right: 10px;
 }
 
-.submit {
+.aoj-23 .submit {
   background: none;
   border: none;
   height: 55px;
