@@ -31,6 +31,7 @@ import TabComponent from './20__tab-component'
 import SimplifiedBudget from './21__simplified-budget'
 import CreditCardForm from './22__credit-card-form'
 import Toaster from './23__toaster'
+import TableOfData from './24__table-of-data'
 
 const router = createBrowserRouter([
   { path: '/', element: <Toc />, errorElement: <ErrorPage /> },
@@ -56,7 +57,8 @@ const router = createBrowserRouter([
   { path: '20-tab-component', element: <TabComponent />, errorElement: <ErrorPage /> },
   { path: '21-simplified-budget', element: <SimplifiedBudget />, errorElement: <ErrorPage /> },
   { path: '22-credit-card-form', element: <CreditCardForm />, errorElement: <ErrorPage /> },
-  { path: '23-toaster', element: <Toaster />, errorElement: <ErrorPage /> }
+  { path: '23-toaster', element: <Toaster />, errorElement: <ErrorPage /> },
+  { path: '24-table-of-data', element: <TableOfData />, errorElement: <ErrorPage /> }
 ])
 
 const rootEl = document.getElementById('root')
