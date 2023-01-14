@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-:root {
-  --primary: #363DAA;
-  --selected: #363DAA;
-  --unselected: #DDE8F7;
+.aoj-24 {
+  --primary: #363daa;
+  --selected: #363daa;
+  --unselected: #dde8f7;
 }
 
-body {
+.aoj-24 .body {
   padding: 0;
   margin: 0;
   min-height: 100vh;
@@ -17,11 +17,11 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.wrapper {
+.aoj-24 .wrapper {
   width: 1300px;
 }
 
-th {
+.aoj-24 th {
   border-bottom: 2px solid black;
   padding: 15px 0;
   padding-right: 12px;
@@ -29,43 +29,43 @@ th {
   font-size: 18px;
 }
 
-th.header__id {
+.aoj-24 th.header__id {
   padding-left: 0;
 }
 
-td {
-  border-bottom: 2px solid #DDE8F7;
+.aoj-24 td {
+  border-bottom: 2px solid #dde8f7;
   padding: 5px 0;
 }
 
-.sort {
+.aoj-24 .sort {
   background: none;
   border: none;
   cursor: pointer;
 }
 
-.sort svg {
+.aoj-24 .sort svg path {
   fill: var(--unselected);
 }
 
-.sort.descending svg .descending,
-.sort.ascending svg .ascending {
+.aoj-24 .sort.descending svg path:first-of-type,
+.aoj-24 .sort.ascending svg path:last-of-type {
   fill: var(--selected);
 }
 
-th {
+.aoj-24 th {
   text-align: left;
   font-weight: bold;
   color: var(--primary);
   line-height: 20px;
 }
 
-td {
+.aoj-24 td {
   padding-right: 12px;
 }
 
-input[type="text"],
-input[type="email"] {
+.aoj-24 input[type='text'],
+.aoj-24 input[type='email'] {
   background: none;
   padding: 0 16px;
   height: 55px;
@@ -76,57 +76,57 @@ input[type="email"] {
   box-sizing: border-box;
 }
 
-.edit input[type="text"],
-.edit input[type="email"] {
-  background: #EDF4F9;
+.aoj-24 .edit input[type='text'],
+.aoj-24 .edit input[type='email'] {
+  background: #edf4f9;
 }
 
-.name input[type="text"] {
+.aoj-24 .name input[type='text'] {
   font-weight: bold;
   color: var(--primary);
 }
 
-.update,
-.edit {
+.aoj-24 .update,
+.aoj-24 .edit {
   background: none;
   border: none;
   cursor: pointer;
 }
 
-.update {
+.aoj-24 .update {
   display: none;
 }
 
-tr.edit .update {
+.aoj-24 tr.edit .update {
   display: block;
 }
 
-tr.edit .edit {
+.aoj-24 tr.edit .edit {
   display: none;
 }
 
-.pagination {
+.aoj-24 .pagination {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 5px;
 }
 
-.pagination button {
+.aoj-24 .pagination button {
   background: none;
   border: none;
   cursor: pointer;
 }
 
-tbody tr:last-child td {
+.aoj-24 tbody tr:last-child td {
   border-bottom: 2px solid black;
 }
 
-tfoot td {
+.aoj-24 tfoot td {
   border-bottom: 0;
 }
 
-tfoot input[type="text"] {
+.aoj-24 tfoot input[type='text'] {
   width: 50px;
   text-align: center;
 }
