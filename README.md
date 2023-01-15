@@ -29,7 +29,7 @@ This is a React implementation of [Advent of Javascript](https://www.adventofjs.
 | 21  | Simplified Budget         | useState                    |
 | 22  | Credit Card Form          | useState                    |
 | 23  | Toaster                   | useEffect, useRef, useState |
-| 24  | Table Of Data             | ❌                          |
+| 24  | Table Of Data             | useRef, useState            |
 
 ## Learn More
 
