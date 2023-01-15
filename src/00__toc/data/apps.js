@@ -1,4 +1,4 @@
-export default [
+const apps = [
   { name: 'Pomodoro Timer', link: '01-pomodoro-timer' },
   { name: 'eCommerce Component', link: '02-ecommerce-component' },
   { name: 'Creating A Piano', link: '03-creating-a-piano' },
@@ -24,3 +24,4 @@ export default [
   { name: 'Toaster', link: '23-toaster' },
   { name: 'Table Of Data', link: '24-table-of-data' }
 ]
+export default apps
