@@ -118,7 +118,7 @@ export default function TableOfData() {
 
   useEffect(() => {
     setView(employees.filter((_, i) => i >= currentPage * tuplesPerPage && i <= tuplesPerPage * (currentPage + 1) - 1))
-  }, [currentPage])
+  }, [currentPage, employees])
 
   const handleClickNextPage = () => {
     setCurrentPage((prev) => {
@@ -145,7 +145,7 @@ export default function TableOfData() {
       if (sort.field === 2) return sort.type === 'ascending' ? newEmployees.sort((a, b) => a.email - b.email) : newEmployees.sort((a, b) => b.email - a.email)
       if (sort.field === 3) return sort.type === 'ascending' ? newEmployees.sort((a, b) => a.title - b.title) : newEmployees.sort((a, b) => b.title - a.title)
     })
-  }, [sort])
+  }, [sort, employees])
 
   return (
     <div className='aoj-24'>
