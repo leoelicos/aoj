@@ -6,7 +6,7 @@ import { ReactComponent as Next } from './images/chevron--right.svg'
 import { ReactComponent as Edit } from './images/edit.svg'
 import { ReactComponent as Sort } from './images/sort.svg'
 import { ReactComponent as Update } from './images/update.svg'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 function TableHeader({ sort, setSort }) {
   const { field, type } = sort
@@ -110,6 +110,31 @@ function Tuple({ employee, setEmployees }) {
 export default function TableOfData() {
   const [employees, setEmployees] = useState(data)
   const [sort, setSort] = useState({ field: 0, type: 'ascending' })
+  const [view, setView] = useState([])
+  const [currentPage, setCurrentPage] = useState(0)
+
+  const tuplesPerPage = 10
+  const maxPages = useRef(employees.length / tuplesPerPage - 1)
+
+  useEffect(() => {
+    setView(employees.filter((_, i) => i >= currentPage * tuplesPerPage && i <= tuplesPerPage * (currentPage + 1) - 1))
+  }, [currentPage])
+
+  const handleClickNextPage = () => {
+    setCurrentPage((prev) => {
+      const nextValue = Math.min(prev + 1, maxPages.current)
+      console.log({ nextValue })
+      return nextValue
+    })
+  }
+
+  const handleClickPreviousPage = () => {
+    setCurrentPage((prev) => {
+      const nextValue = Math.max(prev - 1, 0)
+      console.log({ nextValue })
+      return nextValue
+    })
+  }
 
   useEffect(() => {
     setEmployees(() => {
@@ -136,10 +161,11 @@ export default function TableOfData() {
             />
 
             <tbody>
-              {employees.map((employee) => (
+              {view.map((employee) => (
                 <Tuple
                   employee={employee}
                   setEmployees={setEmployees}
+                  key={employee.id}
                 />
               ))}
             </tbody>
@@ -151,23 +177,20 @@ export default function TableOfData() {
                   <div className='pagination edit'>
                     <button
                       className='previous'
-                      id='previous'>
+                      id='previous'
+                      onClick={handleClickPreviousPage}
+                      disabled={currentPage === 0}>
                       <Previous />
                     </button>
-
-                    <input
-                      type='text'
-                      name='currentPage'
-                      value='1'
-                      id='currentPage'
-                    />
-
+                    {currentPage + 1}
                     <span>&nbsp;of&nbsp;</span>
                     <span id='totalPages'>3</span>
 
                     <button
                       className='next'
-                      id='next'>
+                      id='next'
+                      onClick={handleClickNextPage}
+                      disabled={currentPage === maxPages.current}>
                       <Next />
                     </button>
                   </div>
