@@ -31,8 +31,7 @@ export default function PasswordGenerator() {
     setIncludeSimilar(e.target.checked)
   }
 
-  useEffect(() => {
-    console.log('Generating password')
+  const generatePassword = () => {
     let pool = []
     if (includeSymbols) pool = pool.concat('@#$%'.split(''))
     if (includeNumbers) pool = pool.concat('0123456789'.split(''))
@@ -46,7 +45,11 @@ export default function PasswordGenerator() {
         .map(() => pool[Math.floor(Math.random() * pool.length)])
         .join('')
     )
-  }, [length, includeSymbols, includeNumbers, includeLowercase, includeUppercase, includeSimilar])
+  }
+
+  useEffect(() => {
+    generatePassword()
+  }, [])
 
   return (
     <div className='aoj-18'>
@@ -93,7 +96,10 @@ export default function PasswordGenerator() {
               value={length}
               min='6'
               max='32'
-              onChange={handleChangeLength}
+              onChange={(e) => {
+                handleChangeLength(e)
+                generatePassword()
+              }}
             />
             <span id='lengthText'>{length}</span>&nbsp;characters
           </div>
@@ -104,7 +110,10 @@ export default function PasswordGenerator() {
               name='symbols'
               id='symbols'
               checked={includeSymbols}
-              onChange={handleChangeIncludeSymbols}
+              onChange={(e) => {
+                handleChangeIncludeSymbols(e)
+                generatePassword()
+              }}
             />
             <label htmlFor='symbols'>
               <strong>Include Symbols</strong> (@#$%)
@@ -117,7 +126,10 @@ export default function PasswordGenerator() {
               name='numbers'
               id='numbers'
               checked={includeNumbers}
-              onChange={handleChangeIncludeNumbers}
+              onChange={(e) => {
+                handleChangeIncludeNumbers(e)
+                generatePassword()
+              }}
             />
             <label htmlFor='numbers'>
               <strong>Include Numbers</strong> (1234)
@@ -130,7 +142,10 @@ export default function PasswordGenerator() {
               name='lowercase'
               id='lowercase'
               checked={includeLowercase}
-              onChange={handleChangeIncludeLowercase}
+              onChange={(e) => {
+                handleChangeIncludeLowercase(e)
+                generatePassword()
+              }}
             />
             <label htmlFor='lowercase'>
               <strong>Include Lowercase Characters</strong> (abcd)
@@ -143,7 +158,10 @@ export default function PasswordGenerator() {
               name='uppercase'
               id='uppercase'
               checked={includeUppercase}
-              onChange={handleChangeIncludeUppercase}
+              onChange={(e) => {
+                handleChangeIncludeUppercase(e)
+                generatePassword()
+              }}
             />
             <label htmlFor='uppercase'>
               <strong>Include Uppercase Characters</strong> (ABCD)
@@ -156,7 +174,10 @@ export default function PasswordGenerator() {
               name='similar'
               id='similar'
               checked={includeSimilar}
-              onChange={handleChangeIncludeSimilar}
+              onChange={(e) => {
+                handleChangeIncludeSimilar(e)
+                generatePassword()
+              }}
             />
             <label htmlFor='similar'>
               <strong>Include Similar Characters</strong> (i, l, 1, L, o, 0, O)
