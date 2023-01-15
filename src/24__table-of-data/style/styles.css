@@ -126,7 +126,13 @@
   border-bottom: 0;
 }
 
-.aoj-24 tfoot input[type='text'] {
-  width: 50px;
-  text-align: center;
+.aoj-24 .previous:disabled svg path,
+.aoj-24 .next:disabled svg path {
+  fill: #dde8f7;
+  cursor: default;
+}
+
+.aoj-24 .pagination {
+  user-select: none; /* Standard syntax */
+  cursor: default;
 }
