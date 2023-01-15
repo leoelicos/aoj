@@ -110,15 +110,12 @@ function Tuple({ employee, setEmployees }) {
 export default function TableOfData() {
   const [employees, setEmployees] = useState(data)
   const [sort, setSort] = useState({ field: 0, type: 'ascending' })
-  const [view, setView] = useState([])
   const [currentPage, setCurrentPage] = useState(0)
 
   const tuplesPerPage = 10
   const maxPages = useRef(employees.length / tuplesPerPage - 1)
 
-  useEffect(() => {
-    setView(employees.filter((_, i) => i >= currentPage * tuplesPerPage && i <= tuplesPerPage * (currentPage + 1) - 1))
-  }, [currentPage, employees])
+  const view = employees.filter((_, i) => i >= currentPage * tuplesPerPage && i <= tuplesPerPage * (currentPage + 1) - 1)
 
   const handleClickNextPage = () => {
     setCurrentPage((prev) => {
