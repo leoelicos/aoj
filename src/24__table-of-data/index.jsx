@@ -6,20 +6,20 @@ import { ReactComponent as Next } from './images/chevron--right.svg'
 import { ReactComponent as Edit } from './images/edit.svg'
 import { ReactComponent as Sort } from './images/sort.svg'
 import { ReactComponent as Update } from './images/update.svg'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function TableHeader({ sort, setSort }) {
   const { field, type } = sort
-  const headings = ['ID', 'Name', 'Email Address', 'Job Title']
+  const headings = ['ID', 'Name', 'Email Address', 'Job Title', '']
   const sortTypes = ['ascending', 'descending', '']
   return (
     <thead>
       <tr>
         {headings.map((heading, i) => (
           <th
-            key={heading.name}
+            key={heading}
             className={i === 0 ? 'header__id' : ''}>
-            {heading.name}
+            {heading}
             <button
               className={`sort ${field === i ? type : ''}`}
               onClick={() => {
@@ -42,9 +42,85 @@ function TableHeader({ sort, setSort }) {
   )
 }
 
+function Tuple({ employee, setEmployees }) {
+  const [edit, setEdit] = useState(false)
+
+  const [employeeName, setEmployeeName] = useState(employee.name)
+  const [employeeEmail, setEmployeeEmail] = useState(employee.email)
+  const [employeeTitle, setEmployeeTitle] = useState(employee.title)
+
+  return (
+    <tr className={edit ? 'edit' : ''}>
+      <td>{employee.id}</td>
+      <td className='name'>
+        <input
+          type='text'
+          disabled={!edit}
+          value={employeeName}
+          onChange={(e) => {
+            setEmployeeName(e.target.value)
+          }}
+        />
+      </td>
+      <td>
+        <input
+          type='text'
+          disabled={!edit}
+          value={employeeEmail}
+          onChange={(e) => {
+            setEmployeeEmail(e.target.value)
+          }}
+        />
+      </td>
+      <td>
+        <input
+          type='text'
+          disabled={!edit}
+          value={employeeTitle}
+          onChange={(e) => {
+            setEmployeeTitle(e.target.value)
+          }}
+        />
+      </td>
+      <td>
+        <button
+          className='update'
+          onClick={() => {
+            setEmployees((prev) =>
+              prev.map((v, i) =>
+                i === employee.id //
+                  ? { ...v, name: employeeName, email: employeeEmail, title: employeeTitle }
+                  : v
+              )
+            )
+            setEdit(false)
+          }}>
+          <Update className='update' />
+        </button>
+        <button
+          className='edit'
+          onClick={() => setEdit(true)}>
+          <Edit className='edit' />
+        </button>
+      </td>
+    </tr>
+  )
+}
+
 export default function TableOfData() {
   const [employees, setEmployees] = useState(data)
   const [sort, setSort] = useState({ field: 0, type: 'ascending' })
+
+  useEffect(() => {
+    setEmployees(() => {
+      const newEmployees = JSON.parse(JSON.stringify(employees))
+      if (sort.type === '') return newEmployees
+      if (sort.field === 0) return sort.type === 'ascending' ? newEmployees.sort((a, b) => a.id - b.id) : newEmployees.sort((a, b) => b.id - a.id)
+      if (sort.field === 1) return sort.type === 'ascending' ? newEmployees.sort((a, b) => a.name - b.name) : newEmployees.sort((a, b) => b.name - a.name)
+      if (sort.field === 2) return sort.type === 'ascending' ? newEmployees.sort((a, b) => a.email - b.email) : newEmployees.sort((a, b) => b.email - a.email)
+      if (sort.field === 3) return sort.type === 'ascending' ? newEmployees.sort((a, b) => a.title - b.title) : newEmployees.sort((a, b) => b.title - a.title)
+    })
+  }, [sort])
 
   return (
     <div className='aoj-24'>
@@ -60,426 +136,12 @@ export default function TableOfData() {
             />
 
             <tbody>
-              {/* ADD A CLASS OF EDIT, IF YOU TO DISPLAY THE FORM FIELDS */}
-              <tr>
-                <td>1</td>
-                <td className='name'>
-                  <input
-                    type='text'
-                    disabled={false}
-                    name='person-name-1'
-                    value='Cameron Williamson'
-                  />
-                </td>
-                <td>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-email-1'
-                    value='cameron.williams@example.com'
-                  />
-                </td>
-                <td>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-title-1'
-                    value='Software Developer'
-                  />
-                </td>
-                <td>
-                  <button
-                    className='update'
-                    name='person-update-1'
-                    id='personUpdate1'>
-                    <Update className='update' />
-                  </button>
-                  <button
-                    className='edit'
-                    name='person-edit-1'
-                    id='personEdit1'>
-                    <Edit className='edit' />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>1</td>
-                <td className='name'>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-name-1'
-                    value='Cameron Williamson'
-                  />
-                </td>
-                <td>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-email-1'
-                    value='cameron.williams@example.com'
-                  />
-                </td>
-                <td>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-title-1'
-                    value='Software Developer'
-                  />
-                </td>
-                <td>
-                  <button
-                    className='update'
-                    name='person-update-1'
-                    id='personUpdate1'>
-                    <Update className='update' />
-                  </button>
-                  <button
-                    className='edit'
-                    name='person-edit-1'
-                    id='personEdit1'>
-                    <Edit className='edit' />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>1</td>
-                <td className='name'>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-name-1'
-                    value='Cameron Williamson'
-                  />
-                </td>
-                <td>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-email-1'
-                    value='cameron.williams@example.com'
-                  />
-                </td>
-                <td>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-title-1'
-                    value='Software Developer'
-                  />
-                </td>
-                <td>
-                  <button
-                    className='update'
-                    name='person-update-1'
-                    id='personUpdate1'>
-                    <Update className='update' />
-                  </button>
-                  <button
-                    className='edit'
-                    name='person-edit-1'
-                    id='personEdit1'>
-                    <Edit className='edit' />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>1</td>
-                <td className='name'>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-name-1'
-                    value='Cameron Williamson'
-                  />
-                </td>
-                <td>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-email-1'
-                    value='cameron.williams@example.com'
-                  />
-                </td>
-                <td>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-title-1'
-                    value='Software Developer'
-                  />
-                </td>
-                <td>
-                  <button
-                    className='update'
-                    name='person-update-1'
-                    id='personUpdate1'>
-                    <Update className='update' />
-                  </button>
-                  <button
-                    className='edit'
-                    name='person-edit-1'
-                    id='personEdit1'>
-                    <Edit className='edit' />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>1</td>
-                <td className='name'>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-name-1'
-                    value='Cameron Williamson'
-                  />
-                </td>
-                <td>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-email-1'
-                    value='cameron.williams@example.com'
-                  />
-                </td>
-                <td>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-title-1'
-                    value='Software Developer'
-                  />
-                </td>
-                <td>
-                  <button
-                    className='update'
-                    name='person-update-1'
-                    id='personUpdate1'>
-                    <Update className='update' />
-                  </button>
-                  <button
-                    className='edit'
-                    name='person-edit-1'
-                    id='personEdit1'>
-                    <Edit className='edit' />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>1</td>
-                <td className='name'>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-name-1'
-                    value='Cameron Williamson'
-                  />
-                </td>
-                <td>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-email-1'
-                    value='cameron.williams@example.com'
-                  />
-                </td>
-                <td>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-title-1'
-                    value='Software Developer'
-                  />
-                </td>
-                <td>
-                  <button
-                    className='update'
-                    name='person-update-1'
-                    id='personUpdate1'>
-                    <Update className='update' />
-                  </button>
-                  <button
-                    className='edit'
-                    name='person-edit-1'
-                    id='personEdit1'>
-                    <Edit className='edit' />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>1</td>
-                <td className='name'>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-name-1'
-                    value='Cameron Williamson'
-                  />
-                </td>
-                <td>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-email-1'
-                    value='cameron.williams@example.com'
-                  />
-                </td>
-                <td>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-title-1'
-                    value='Software Developer'
-                  />
-                </td>
-                <td>
-                  <button
-                    className='update'
-                    name='person-update-1'
-                    id='personUpdate1'>
-                    <Update className='update' />
-                  </button>
-                  <button
-                    className='edit'
-                    name='person-edit-1'
-                    id='personEdit1'>
-                    <Edit className='edit' />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>1</td>
-                <td className='name'>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-name-1'
-                    value='Cameron Williamson'
-                  />
-                </td>
-                <td>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-email-1'
-                    value='cameron.williams@example.com'
-                  />
-                </td>
-                <td>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-title-1'
-                    value='Software Developer'
-                  />
-                </td>
-                <td>
-                  <button
-                    className='update'
-                    name='person-update-1'
-                    id='personUpdate1'>
-                    <Update className='update' />
-                  </button>
-                  <button
-                    className='edit'
-                    name='person-edit-1'
-                    id='personEdit1'>
-                    <Edit className='edit' />
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>1</td>
-                <td className='name'>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-name-1'
-                    value='Cameron Williamson'
-                  />
-                </td>
-                <td>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-email-1'
-                    value='cameron.williams@example.com'
-                  />
-                </td>
-                <td>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-title-1'
-                    value='Software Developer'
-                  />
-                </td>
-                <td>
-                  <button
-                    className='update'
-                    name='person-update-1'
-                    id='personUpdate1'>
-                    <Update className='update' />
-                  </button>
-                  <button
-                    className='edit'
-                    name='person-edit-1'
-                    id='personEdit1'>
-                    <Edit className='edit' />
-                  </button>
-                </td>
-              </tr>
-
-              <tr className='edit'>
-                <td>1</td>
-                <td className='name'>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-name-1'
-                    value='Cameron Williamson'
-                  />
-                </td>
-                <td>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-email-1'
-                    value='cameron.williams@example.com'
-                  />
-                </td>
-                <td>
-                  <input
-                    type='text'
-                    disabled='disabled'
-                    name='person-title-1'
-                    value='Software Developer'
-                  />
-                </td>
-                <td>
-                  <button
-                    className='update'
-                    name='person-update-1'
-                    id='personUpdate1'>
-                    <Update className='update' />
-                  </button>
-                  <button
-                    className='edit'
-                    name='person-edit-1'
-                    id='personEdit1'>
-                    <Edit className='edit' />
-                  </button>
-                </td>
-              </tr>
+              {employees.map((employee) => (
+                <Tuple
+                  employee={employee}
+                  setEmployees={setEmployees}
+                />
+              ))}
             </tbody>
 
             <tfoot>
