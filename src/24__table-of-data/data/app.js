@@ -1,4 +1,4 @@
-export default [
+const employees = [
   {
     id: 1,
     name: 'Cameron Williamson',
@@ -180,3 +180,4 @@ export default [
     title: 'Scrum Master'
   }
 ]
+export default employees
