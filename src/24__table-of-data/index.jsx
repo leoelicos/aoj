@@ -6,12 +6,10 @@ import { ReactComponent as Next } from './images/chevron--right.svg'
 import { ReactComponent as Edit } from './images/edit.svg'
 import { ReactComponent as Sort } from './images/sort.svg'
 import { ReactComponent as Update } from './images/update.svg'
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 
-function TableHeader({ sort, setSort }) {
-  const { field, type } = sort
+function TableHeader({ handleSort, sortField, sortType }) {
   const headings = ['ID', 'Name', 'Email Address', 'Job Title', '']
-  const sortTypes = ['ascending', 'descending', '']
   return (
     <thead>
       <tr>
@@ -20,21 +18,15 @@ function TableHeader({ sort, setSort }) {
             key={heading}
             className={i === 0 ? 'header__id' : ''}>
             {heading}
-            <button
-              className={`sort ${field === i ? type : ''}`}
-              onClick={() => {
-                setSort((prev) => {
-                  if (prev.field === i) {
-                    let idx = sortTypes.indexOf(prev.type)
-                    let newIdx = (idx + 1) % 3
-                    return { field: i, type: sortTypes[newIdx] }
-                  } else {
-                    return { field: i, type: 'ascending' }
-                  }
-                })
-              }}>
-              <Sort />
-            </button>
+            {i < 4 && (
+              <button
+                className={`sort ${sortField === i ? (sortType ? 'ascending' : 'descending') : ''}`}
+                onClick={() => {
+                  handleSort(i)
+                }}>
+                <Sort />
+              </button>
+            )}
           </th>
         ))}
       </tr>
@@ -109,13 +101,11 @@ function Tuple({ employee, setEmployees }) {
 
 export default function TableOfData() {
   const [employees, setEmployees] = useState(data)
-  const [sort, setSort] = useState({ field: 0, type: 'ascending' })
+  const [sort, setSort] = useState({ field: 0, ascending: true })
   const [currentPage, setCurrentPage] = useState(0)
 
   const tuplesPerPage = 10
   const maxPages = useRef(employees.length / tuplesPerPage - 1)
-
-  const view = employees.filter((_, i) => i >= currentPage * tuplesPerPage && i <= tuplesPerPage * (currentPage + 1) - 1)
 
   const handleClickNextPage = () => {
     setCurrentPage((prev) => {
@@ -128,21 +118,31 @@ export default function TableOfData() {
   const handleClickPreviousPage = () => {
     setCurrentPage((prev) => {
       const nextValue = Math.max(prev - 1, 0)
-      console.log({ nextValue })
+      // console.log({ nextValue })
       return nextValue
     })
   }
 
-  useEffect(() => {
+  const handleSort = (i) => {
+    let ascending = i === sort.field ? !sort.ascending : true
+    setSort({ field: i, ascending })
     setEmployees(() => {
-      const newEmployees = JSON.parse(JSON.stringify(employees))
-      if (sort.type === '') return newEmployees
-      if (sort.field === 0) return sort.type === 'ascending' ? newEmployees.sort((a, b) => a.id - b.id) : newEmployees.sort((a, b) => b.id - a.id)
-      if (sort.field === 1) return sort.type === 'ascending' ? newEmployees.sort((a, b) => a.name - b.name) : newEmployees.sort((a, b) => b.name - a.name)
-      if (sort.field === 2) return sort.type === 'ascending' ? newEmployees.sort((a, b) => a.email - b.email) : newEmployees.sort((a, b) => b.email - a.email)
-      if (sort.field === 3) return sort.type === 'ascending' ? newEmployees.sort((a, b) => a.title - b.title) : newEmployees.sort((a, b) => b.title - a.title)
+      let n = JSON.parse(JSON.stringify(employees))
+      let sorted =
+        i === 0 //
+          ? n.sort((a, b) => a.id - b.id)
+          : i === 1
+          ? n.sort((a, b) => a.name.localeCompare(b.name))
+          : i === 2
+          ? n.sort((a, b) => a.email.localeCompare(b.email))
+          : i === 3
+          ? n.sort((a, b) => a.title.localeCompare(b.title))
+          : []
+      if (!ascending) sorted.reverse()
+      // console.log('Sorting', { by: i, ascending, sorted })
+      return sorted
     })
-  }, [sort, employees])
+  }
 
   return (
     <div className='aoj-24'>
@@ -153,18 +153,21 @@ export default function TableOfData() {
             cellSpacing='0'
             width='100%'>
             <TableHeader
-              sort={sort}
-              setSort={setSort}
+              sortField={sort.field}
+              sortType={sort.ascending}
+              handleSort={handleSort}
             />
 
             <tbody>
-              {view.map((employee) => (
-                <Tuple
-                  employee={employee}
-                  setEmployees={setEmployees}
-                  key={employee.id}
-                />
-              ))}
+              {employees
+                .filter((_, i) => i >= currentPage * tuplesPerPage && i <= tuplesPerPage * (currentPage + 1) - 1)
+                .map((employee) => (
+                  <Tuple
+                    employee={employee}
+                    setEmployees={setEmployees}
+                    key={employee.id}
+                  />
+                ))}
             </tbody>
 
             <tfoot>
