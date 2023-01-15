@@ -1,8 +1,6 @@
-import apps from './data/apps.json'
+import list from './data/apps'
 import { Link } from 'react-router-dom'
 import './style/toc.css'
-
-const { list } = apps
 
 function Toc() {
   return (

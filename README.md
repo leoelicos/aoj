@@ -28,7 +28,7 @@ This is a React implementation of [Advent of Javascript](https://www.adventofjs.
 | 20  | Tab Component             | useState                    |
 | 21  | Simplified Budget         | useState                    |
 | 22  | Credit Card Form          | useState                    |
-| 23  | Toaster                   | ❌                          |
+| 23  | Toaster                   | useEffect, useRef, useState |
 | 24  | Table Of Data             | ❌                          |
 
 ## Learn More
